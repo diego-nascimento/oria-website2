@@ -1,5 +1,6 @@
 'use client';
 import { theme } from '@/style/theme';
+
 import { GlobalStyles, ThemeProvider } from '@mui/material';
 import { PropsWithChildren } from 'react';
 
@@ -20,6 +21,13 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
             height: 'auto',
             maxWidth: '100%',
             display: 'block',
+          },
+          iframe: {
+            AspectRatio: '16/9',
+            width: '100%',
+            maxWidth: 1100,
+            borderRadius: 30,
+            border: 'none',
           },
         })}
       />

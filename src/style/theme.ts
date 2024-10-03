@@ -20,6 +20,8 @@ export const theme = createTheme({
         sx: {
           borderRadius: 50,
           fontWeight: 700,
+          fontSize: 24,
+          paddingX: 4,
         },
       },
     },
