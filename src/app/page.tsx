@@ -1,12 +1,13 @@
 import { Avaliacoes } from '@/modules/Avaliacoes';
 import { Banner } from '@/modules/Banner';
-import { Fifty } from '@/modules/Fifty';
+import { PIlares } from '@/modules/PIlares';
 import { Footer } from '@/modules/Footer';
-import { Forty } from '@/modules/Forty';
+import { MulherAndando } from '@/modules/MulherAndando';
 import { Header } from '@/modules/Header';
 import { Home } from '@/modules/Home';
+import { Questions } from '@/modules/Perguntas';
 import { Second } from '@/modules/Second';
-import { Third } from '@/modules/Third';
+import { Apresentacao } from '@/modules/Apresentacao';
 import { WhatsappButton } from '@/modules/WhatsappButton';
 
 export default function HomePage() {
@@ -16,11 +17,12 @@ export default function HomePage() {
       <WhatsappButton />
       <Home />
       <Second />
-      <Third />
       <Banner />
-      <Forty />
-      <Fifty />
+      <MulherAndando />
+      <PIlares />
       <Avaliacoes />
+      <Apresentacao />
+      <Questions />
       <Footer />
     </div>
   );

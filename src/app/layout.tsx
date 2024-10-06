@@ -1,7 +1,12 @@
+import './style.css';
 import { AppThemeProvider } from '@/shared/Providers/themeProvider';
 
 import { CssBaseline } from '@mui/material';
 import type { Metadata } from 'next';
+
+import '@fontsource/playfair-display/400.css';
+import '@fontsource/playfair-display/500.css';
+import '@fontsource/playfair-display/700.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

@@ -10,6 +10,7 @@ export const Home = () => {
       minHeight={'100vh'}
       height={'100%'}
       bgcolor={theme.palette.secondary.main}
+      id="home"
     >
       <MaxWidth>
         <Stack
@@ -52,10 +53,11 @@ export const Home = () => {
                   variant="h1"
                   fontSize={{
                     xs: 36,
-                    md: '56px',
+                    md: 52,
                   }}
                   letterSpacing={1}
                   fontWeight={600}
+                  color="secondary.contrastText"
                 >
                   Após o positivo ​existe o​ <strong>desconhecido</strong>.
                   Emoções diferentes e situações <strong>difíceis</strong>. Você

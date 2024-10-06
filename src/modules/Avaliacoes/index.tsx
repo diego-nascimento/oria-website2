@@ -35,7 +35,7 @@ const avaliacoes = [
 
 export const Avaliacoes = () => {
   return (
-    <Stack paddingY={4} position={'relative'}>
+    <Stack paddingY={4} position={'relative'} id="comentarios">
       <Stack
         sx={{
           position: 'absolute',
@@ -60,7 +60,8 @@ export const Avaliacoes = () => {
               xs: 32,
               md: 42,
             }}
-            fontWeight={700}
+            fontFamily={'Roboto Slab, serif'}
+            fontWeight={600}
           >
             Avaliações
           </Typography>

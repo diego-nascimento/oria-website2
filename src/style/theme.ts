@@ -7,13 +7,14 @@ export const theme = createTheme({
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#87CEEB',
+      main: '#001f3f',
     },
 
     background: {
       default: '#F8F6F1',
     },
   },
+
   components: {
     MuiButton: {
       defaultProps: {

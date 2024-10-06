@@ -2,16 +2,21 @@
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Stack, Typography, useTheme } from '@mui/material';
 
-export const Third = () => {
+export const Apresentacao = () => {
   const theme = useTheme();
   return (
-    <Stack bgcolor={theme.palette.secondary.main} paddingY={4} paddingX={2}>
+    <Stack
+      bgcolor={theme.palette.secondary.main}
+      paddingY={4}
+      paddingX={2}
+      id="sobre-mim"
+    >
       <MaxWidth>
         <Stack borderRadius={8} alignItems={'center'}>
           <Stack
             bgcolor={theme.palette.background.default}
             width={'100%'}
-            maxWidth={900}
+            maxWidth={600}
             paddingX={{
               xs: 2,
               md: 4,
@@ -23,17 +28,6 @@ export const Third = () => {
             borderRadius={8}
             gap={1}
           >
-            <Typography
-              fontSize={{
-                xs: 18,
-                md: 36,
-              }}
-              color="primary"
-              textAlign={'center'}
-              fontWeight={700}
-            >
-              Ariane Miranda, poe um titulo aqui
-            </Typography>
             <iframe
               style={{
                 aspectRatio: '16/9',
@@ -53,6 +47,7 @@ export const Third = () => {
           }}
           textAlign={'center'}
           fontWeight={700}
+          color="secondary.contrastText"
         >
           Ariane dos Santos Miranda - Psicóloga ​de Mães e gestantes
         </Typography>
@@ -73,13 +68,14 @@ export const Third = () => {
               xs: 18,
               md: 38,
             }}
+            color="secondary.contrastText"
           >
             Sou{' '}
-            <Box component={'strong'} color={'#000'}>
+            <Box component={'strong'} color="secondary.contrastText">
               psicóloga
             </Box>{' '}
             com foco em{' '}
-            <Box component={'strong'} color={'#000'}>
+            <Box component={'strong'} color="secondary.contrastText">
               perinatalidade
             </Box>{' '}
             e ​parentalidade, ou seja: Dedico o meu trabalho para ​auxiliar{' '}
@@ -92,14 +88,15 @@ export const Third = () => {
               xs: 18,
               md: 38,
             }}
+            color="secondary.contrastText"
           >
             Eu sei o que é precisar de{' '}
-            <Box component={'strong'} color={'#000'}>
+            <Box component={'strong'} color="secondary.contrastText">
               apoio e acolhimento
             </Box>{' '}
             e não ​saber onde encontrar! É por isso que ao longo da minha
             ​carreira venho me atualizando e me{' '}
-            <Box component={'strong'} color={'#000'}>
+            <Box component={'strong'} color="secondary.contrastText">
               especializando​
             </Box>{' '}
             para <strong>ajudar você</strong>.
@@ -109,9 +106,10 @@ export const Third = () => {
               xs: 18,
               md: 38,
             }}
+            color="secondary.contrastText"
           >
             Para além da graduação em psicologia, sou{' '}
-            <Box component={'strong'} color={'#000'}>
+            <Box component={'strong'} color="secondary.contrastText">
               Pós-​graduada
             </Box>{' '}
             em Psicologia Perinatal e da Parentalidade e ​Pós-graduanda em{' '}

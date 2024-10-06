@@ -2,7 +2,7 @@
 
 import { Box, Stack, Typography, useTheme } from '@mui/material';
 
-export const Forty = () => {
+export const MulherAndando = () => {
   const theme = useTheme();
   return (
     <Stack
@@ -36,7 +36,7 @@ export const Forty = () => {
         }}
         maxWidth={{
           xs: '100%',
-          lg: '30vw',
+          lg: '35vw',
         }}
       >
         <Typography

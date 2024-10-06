@@ -12,12 +12,24 @@ import {
 } from '@mui/material';
 import Image from 'next/image';
 
-export const Fifty = () => {
+export const PIlares = () => {
   const theme = useTheme();
   return (
-    <Stack py={4} px={2}>
+    <Stack py={4} px={2} id="psicoterapia">
       <MaxWidth>
-        <Grid2 container spacing={4}>
+        <Typography
+          textTransform={'uppercase'}
+          textAlign={'center'}
+          fontSize={{
+            xs: 32,
+            md: 42,
+          }}
+          fontFamily={'Roboto Slab, serif'}
+          fontWeight={600}
+        >
+          Pilares
+        </Typography>
+        <Grid2 container spacing={4} marginTop={4}>
           <Grid2
             size={{
               xs: 12,
