@@ -27,7 +27,7 @@ export const PIlares = () => {
           fontFamily={'Roboto Slab, serif'}
           fontWeight={600}
         >
-          Pilares
+          Seu tratamento na pratica
         </Typography>
         <Grid2 container spacing={4} marginTop={4}>
           <Grid2

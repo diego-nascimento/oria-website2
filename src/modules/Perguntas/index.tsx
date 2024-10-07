@@ -50,7 +50,7 @@ export const Questions = () => {
       marginY={4}
       paddingX={{
         xs: 2,
-        lg: 10,
+        lg: 4,
       }}
       justifyContent={'center'}
     >
@@ -82,7 +82,6 @@ export const Questions = () => {
       <Grid2
         size={{
           xs: 12,
-          lg: 7,
         }}
       >
         <Stack direction={'column'} gap={1}>

@@ -23,17 +23,12 @@ export const MulherAndando = () => {
       <Stack
         zIndex={20}
         bgcolor={theme.palette.background.default}
-        py={10}
-        px={2}
         borderRadius={4}
         marginLeft={{
           xs: 0,
           lg: 80,
         }}
-        marginBottom={{
-          xs: 0,
-          lg: 10,
-        }}
+        padding={4}
         maxWidth={{
           xs: '100%',
           lg: '35vw',
@@ -41,8 +36,8 @@ export const MulherAndando = () => {
       >
         <Typography
           fontSize={{
-            xs: 24,
-            lg: 38,
+            xs: 20,
+            lg: 32,
           }}
           textAlign={'right'}
         >
