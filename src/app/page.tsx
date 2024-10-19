@@ -9,6 +9,7 @@ import { Questions } from '@/modules/Perguntas';
 import { Second } from '@/modules/Second';
 import { Apresentacao } from '@/modules/Apresentacao';
 import { WhatsappButton } from '@/modules/WhatsappButton';
+import { Caminhos } from '@/modules/Caminhos';
 
 export default function HomePage() {
   return (
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Home />
       <Second />
       <Banner />
+      <Caminhos />
       <MulherAndando />
       <PIlares />
       <Avaliacoes />

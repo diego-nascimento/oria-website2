@@ -9,6 +9,7 @@ import {
   Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { MaxWidth } from '@/shared/components/MaxWidth';
 
 const questions = [
   {
@@ -45,75 +46,76 @@ const questions = [
 
 export const Questions = () => {
   return (
-    <Grid2
-      container
-      marginY={4}
-      paddingX={{
-        xs: 2,
-        lg: 4,
-      }}
-      justifyContent={'center'}
-    >
+    <MaxWidth>
       <Grid2
-        size={{
-          xs: 12,
+        container
+        marginY={4}
+        paddingX={{
+          xs: 2,
         }}
+        justifyContent={'center'}
       >
-        <Stack
-          marginBottom={2}
-          alignItems={'center'}
-          justifyContent={'center'}
-          height={'100%'}
+        <Grid2
+          size={{
+            xs: 12,
+          }}
         >
-          <Typography
-            textTransform={'uppercase'}
-            textAlign={'center'}
-            fontSize={{
-              xs: 32,
-              md: 42,
-            }}
-            fontFamily={'Roboto Slab, serif'}
-            fontWeight={600}
+          <Stack
+            marginBottom={2}
+            alignItems={'center'}
+            justifyContent={'center'}
+            height={'100%'}
           >
-            Alguma duvida?
-          </Typography>
-        </Stack>
-      </Grid2>
-      <Grid2
-        size={{
-          xs: 12,
-        }}
-      >
-        <Stack direction={'column'} gap={1}>
-          {questions.map((qs) => {
-            return (
-              <Stack
-                key={qs.question}
-                sx={{
-                  borderRadius: 8,
-                }}
-              >
-                <Accordion
+            <Typography
+              textTransform={'uppercase'}
+              textAlign={'center'}
+              fontSize={{
+                xs: 32,
+                md: 42,
+              }}
+              fontFamily={'Roboto Slab, serif'}
+              fontWeight={600}
+            >
+              Alguma duvida?
+            </Typography>
+          </Stack>
+        </Grid2>
+        <Grid2
+          size={{
+            xs: 12,
+          }}
+        >
+          <Stack direction={'column'} gap={1}>
+            {questions.map((qs) => {
+              return (
+                <Stack
+                  key={qs.question}
                   sx={{
-                    '&:hover': {
-                      transition: 'background .5s',
-                    },
+                    borderRadius: 8,
                   }}
                 >
-                  <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1-content"
-                    id="panel1-header"
+                  <Accordion
+                    sx={{
+                      '&:hover': {
+                        transition: 'background .5s',
+                      },
+                    }}
                   >
-                    <Stack paddingY={2}> {qs.question}</Stack>
-                  </AccordionSummary>
-                  <AccordionDetails>{qs.answer}</AccordionDetails>
-                </Accordion>
-              </Stack>
-            );
-          })}
-        </Stack>
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls="panel1-content"
+                      id="panel1-header"
+                    >
+                      <Stack paddingY={2}> {qs.question}</Stack>
+                    </AccordionSummary>
+                    <AccordionDetails>{qs.answer}</AccordionDetails>
+                  </Accordion>
+                </Stack>
+              );
+            })}
+          </Stack>
+        </Grid2>
       </Grid2>
-    </Grid2>
+    </MaxWidth>
   );
 };
