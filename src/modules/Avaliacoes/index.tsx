@@ -35,7 +35,15 @@ const avaliacoes = [
 
 export const Avaliacoes = () => {
   return (
-    <Stack paddingY={4} position={'relative'} id="comentarios">
+    <Stack
+      paddingY={4}
+      position={'relative'}
+      id="comentarios"
+      paddingX={{
+        xs: 2,
+        md: 0,
+      }}
+    >
       <Stack
         sx={{
           position: 'absolute',

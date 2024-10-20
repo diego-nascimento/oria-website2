@@ -121,7 +121,14 @@ export const Banner = () => {
         }}
         paddingBottom={2}
       >
-        <Carousel autoPlay animation="slide" swipe duration={700} indicators>
+        <Carousel
+          autoPlay
+          animation="slide"
+          swipe
+          duration={700}
+          indicators
+          stopAutoPlayOnHover
+        >
           <Stack
             justifyContent={'center'}
             alignItems={'center'}
