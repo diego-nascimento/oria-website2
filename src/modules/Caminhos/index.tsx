@@ -3,9 +3,10 @@
 import {
   Accordion,
   AccordionDetails,
-  AccordionSummary,
+  AccordionSummary as MuiAccordionSummary,
   Grid2,
   Stack,
+  styled,
   Typography,
   useTheme,
 } from '@mui/material';
@@ -13,6 +14,12 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { useState } from 'react';
+import { theme } from '@/style/theme';
+
+const AccordionSummary = styled(MuiAccordionSummary)({
+  fontWeight: 700,
+  color: theme.palette.secondary.main,
+});
 
 export const Caminhos = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
@@ -94,26 +101,29 @@ export const Caminhos = () => {
               >
                 <Stack paddingY={2}>Pré-Natal psicologico</Stack>
               </AccordionSummary>
-              <AccordionDetails>
-                <AccordionDetails>
-                  <Stack
-                    component={'iframe'}
-                    sx={{
-                      width: '100%',
-                      height: 350,
 
-                      [theme.breakpoints.down('lg')]: {
-                        height: 320,
-                      },
-                    }}
-                    src="https://www.youtube.com/embed/FHHoA_qUl8U?si=ZnaLshsS5clQtBNb"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </AccordionDetails>
+              <AccordionDetails>
+                <Stack
+                  component={'iframe'}
+                  sx={{
+                    width: '100%',
+                    height: 350,
+
+                    [theme.breakpoints.down('lg')]: {
+                      height: 500,
+                    },
+
+                    [theme.breakpoints.down('sm')]: {
+                      height: 210,
+                    },
+                  }}
+                  src="https://www.youtube.com/embed/FHHoA_qUl8U?si=ZnaLshsS5clQtBNb"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
               </AccordionDetails>
             </Accordion>
             <Accordion
@@ -140,7 +150,11 @@ export const Caminhos = () => {
                     height: 350,
 
                     [theme.breakpoints.down('lg')]: {
-                      height: 320,
+                      height: 500,
+                    },
+
+                    [theme.breakpoints.down('sm')]: {
+                      height: 210,
                     },
                   }}
                   src="https://www.youtube.com/embed/FHHoA_qUl8U?si=ZnaLshsS5clQtBNb"
@@ -176,7 +190,11 @@ export const Caminhos = () => {
                     height: 350,
 
                     [theme.breakpoints.down('lg')]: {
-                      height: 320,
+                      height: 500,
+                    },
+
+                    [theme.breakpoints.down('sm')]: {
+                      height: 210,
                     },
                   }}
                   src="https://www.youtube.com/embed/FHHoA_qUl8U?si=ZnaLshsS5clQtBNb"
@@ -212,7 +230,11 @@ export const Caminhos = () => {
                     height: 350,
 
                     [theme.breakpoints.down('lg')]: {
-                      height: 320,
+                      height: 500,
+                    },
+
+                    [theme.breakpoints.down('sm')]: {
+                      height: 210,
                     },
                   }}
                   src="https://www.youtube.com/embed/4b2_X3_beuo?si=n8h-BjdFtXdIkbTg"
