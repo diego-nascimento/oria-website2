@@ -82,7 +82,7 @@ export const PIlares = () => {
                         md: 24,
                       }}
                     >
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         Identificação
                       </Box>{' '}
                       de questões que você vem ​enfrentando. Vamos juntas
@@ -117,11 +117,11 @@ export const PIlares = () => {
                     >
                       Com diagnóstico definido é criado um protocolo ​individual
                       e personalizado ({' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         plano de tratamento
                       </Box>{' '}
                       ) para tratar de forma​{' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         personalizada
                       </Box>{' '}
                       o que te incomoda.
@@ -153,11 +153,11 @@ export const PIlares = () => {
                       }}
                     >
                       Durante as sessões, além do{' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         acolhimento
                       </Box>{' '}
                       e uma​{' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         escuta qualificada
                       </Box>{' '}
                       trabalhamos com técnicas ​eficazes da TCC (Terapias
@@ -190,16 +190,16 @@ export const PIlares = () => {
                       }}
                     >
                       Ao atingirmos os{' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         objetivos terapêuticos
                       </Box>{' '}
                       que te ​trouxeram para o tratamento e mediante a ​melhora
                       do seu quadro, você já será capaz de ​utilizar as{' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         habilidades
                       </Box>{' '}
                       e{' '}
-                      <Box component="strong" color={'#000'}>
+                      <Box component="strong" color={'#001f3f'}>
                         ferramentas
                       </Box>{' '}
                       construídas ​em terapia.

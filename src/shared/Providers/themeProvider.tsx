@@ -29,6 +29,7 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
             borderRadius: 30,
             border: 'none',
           },
+
           ' a, a:hover, a:visited, a:active': {
             color: 'inherit',
             textDecoration: 'none',

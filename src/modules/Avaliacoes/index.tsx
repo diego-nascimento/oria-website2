@@ -94,7 +94,7 @@ export const Avaliacoes = () => {
                     >
                       {av.text}
                       {'   '}
-                      <Box component={'strong'} color={'#000'}>
+                      <Box component={'strong'} color={'#001f3f'}>
                         {av.person}
                       </Box>
                     </Typography>

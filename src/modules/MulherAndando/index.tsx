@@ -42,19 +42,19 @@ export const MulherAndando = () => {
           textAlign={'right'}
         >
           Mesmo que você{' '}
-          <Box component={'strong'} color={'#000'}>
+          <Box component={'strong'} color={'#001f3f'}>
             acredite
           </Box>{' '}
           que não ​existe{' '}
-          <Box component={'strong'} color={'#000'}>
+          <Box component={'strong'} color={'#001f3f'}>
             saída
           </Box>
           , saiba que é{' '}
-          <Box component={'strong'} color={'#000'}>
+          <Box component={'strong'} color={'#001f3f'}>
             possível​ construir
           </Box>{' '}
           uma realidade mais​{' '}
-          <Box component={'strong'} color={'#000'}>
+          <Box component={'strong'} color={'#001f3f'}>
             funcional
           </Box>{' '}
           e com mais <strong>qualidade ​de vida</strong>.

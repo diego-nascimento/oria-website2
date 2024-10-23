@@ -16,6 +16,13 @@ export const theme = createTheme({
   },
 
   components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          color: '#001f3f',
+        },
+      },
+    },
     MuiButton: {
       defaultProps: {
         sx: {
