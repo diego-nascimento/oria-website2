@@ -82,7 +82,7 @@ export const Header = () => {
         variant="temporary"
         PaperProps={{
           sx: {
-            width: '100%',
+            width: '300px',
             maxWidth: '70%',
           },
         }}
@@ -139,7 +139,7 @@ export const Header = () => {
                   xs: 'row-reverse',
                   md: 'row',
                 }}
-                alignItems={'flex-start'}
+                alignItems={'center'}
                 justifyContent={'space-between'}
               >
                 <Link href={'/#home'}>
