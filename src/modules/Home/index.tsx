@@ -86,8 +86,8 @@ export const Home = () => {
                 lg: 'auto',
               }}
               sx={{
-                backgroundImage: 'url(/oria.png)',
-                backgroundPosition: 'top',
+                backgroundImage: 'url(/ariane.jpg)',
+                backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
               }}
@@ -108,6 +108,10 @@ export const Home = () => {
           md: 0,
         }}
         paddingX={2}
+        sx={{
+          boxShadow: 'rgba(0, 0, 0, 0.25) 0px -70px 55px',
+          zIndex: 10,
+        }}
       >
         <Typography
           variant="h3"
