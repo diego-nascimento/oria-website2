@@ -1,8 +1,17 @@
+'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Email, Public, Room, WhatsApp } from '@mui/icons-material';
-import { Avatar, Box, Divider, Stack, Typography } from '@mui/material';
+import {
+  Avatar,
+  Box,
+  Divider,
+  Stack,
+  Typography,
+  useTheme,
+} from '@mui/material';
 
 export const Footer = () => {
+  const theme = useTheme();
   return (
     <Stack py={4} px={2}>
       <Divider />
@@ -23,23 +32,55 @@ export const Footer = () => {
                   width: '170px',
                   height: '170px',
                   display: 'flex',
+
+                  [theme.breakpoints.down('md')]: {
+                    width: 130,
+                    height: 130,
+                  },
                 }}
                 src="oria2.jpg"
               >
                 AM
               </Avatar>
               <Stack justifyContent={'center'}>
-                <Typography fontSize={26}>Ariane Miranda</Typography>
-                <Typography fontSize={18} color="#858881" fontStyle={'italic'}>
+                <Typography
+                  fontSize={26}
+                  fontFamily={'Bree Serif, serif'}
+                  fontWeight={400}
+                >
+                  Ariane Miranda
+                </Typography>
+                <Typography
+                  fontSize={{
+                    xs: 16,
+                    md: 18,
+                  }}
+                  color="#858881"
+                  fontStyle={'italic'}
+                >
                   Psicóloga Perinatal e Parental
                 </Typography>
-                <Typography fontSize={18} color="#858881" fontStyle={'italic'}>
+                <Typography
+                  fontSize={{
+                    xs: 16,
+                    md: 18,
+                  }}
+                  color="#858881"
+                  fontStyle={'italic'}
+                >
                   CRP: 04/67556
                 </Typography>
               </Stack>
             </Stack>
             <Stack spacing={1.5}>
-              <Typography fontWeight={700} fontSize={32} color={'#001f3f'}>
+              <Typography
+                fontWeight={700}
+                fontSize={{
+                  md: 32,
+                  xs: 28,
+                }}
+                color={'#001f3f'}
+              >
                 Fale comigo
               </Typography>
               <Stack gap={0.3}>
@@ -66,7 +107,10 @@ export const Footer = () => {
           </Stack>
           <Stack>
             <Typography
-              fontSize={26}
+              fontSize={{
+                md: 28,
+                xs: 24,
+              }}
               fontWeight={600}
               textAlign={{
                 xs: 'left',
@@ -218,7 +262,15 @@ export const Footer = () => {
         </Stack>
         <Stack alignItems={'center'}>
           <Stack marginTop={8} maxWidth={750}>
-            <Typography textAlign={'center'} bgcolor={'#fff'} fontWeight={600}>
+            <Typography
+              textAlign={'center'}
+              bgcolor={'#fff'}
+              fontWeight={600}
+              fontSize={{
+                md: 16,
+                xs: 12,
+              }}
+            >
               Atenção: Se você estiver em crise, com ideação ou planejamento
               suicida, ligue para o Centro de ​Valorização da Vida - CVV (188).
               Em caso de emergência, procure o hospital mais próximo. Havendo
