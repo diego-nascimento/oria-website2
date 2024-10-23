@@ -23,6 +23,33 @@ import {
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
+const items = [
+  {
+    text: 'Sobre',
+    url: '#sobre-mim',
+  },
+  {
+    text: 'Tratamentos',
+    url: '#tratamentos',
+  },
+  {
+    text: 'Emoções',
+    url: '#emocoes',
+  },
+  {
+    text: 'Psicoterapia',
+    url: '#psicoterapia',
+  },
+  {
+    text: 'Avaliações',
+    url: '#avaliacoes',
+  },
+  {
+    text: 'Dúvidas',
+    url: '#duvidas',
+  },
+];
+
 export const Header = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
@@ -49,45 +76,39 @@ export const Header = () => {
             md: 'none',
           },
         }}
-        anchor={'top'}
+        anchor={'left'}
         open={open}
         onClose={toggleDrawer}
         variant="temporary"
         PaperProps={{
           sx: {
-            top: '56px',
+            width: '100%',
+            maxWidth: '70%',
           },
         }}
       >
         <Box
           sx={{
-            width: 'auto',
+            width: '100%',
           }}
           role="presentation"
         >
           <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text) => (
+            {items.map((item) => (
               <ListItem
-                key={text}
+                key={item.url}
                 disablePadding
-                sx={{
-                  alignItems: 'center',
-                }}
+                onClick={toggleDrawer}
+                component={Link}
+                href={item.url}
               >
-                <ListItemButton
-                  sx={{
-                    '&:hover': {
-                      backgroundColor: 'secondary.main',
-                      color: 'background.default',
-                      transition: 'background .15s',
-                    },
-                  }}
-                >
+                <ListItemButton>
                   <ListItemText
                     primaryTypographyProps={{
-                      textAlign: 'center',
+                      fontWeight: 600,
+                      color: 'secondary.main',
                     }}
-                    primary={text}
+                    primary={item.text}
                   />
                 </ListItemButton>
               </ListItem>
@@ -99,7 +120,7 @@ export const Header = () => {
       <AppBar
         color="secondary"
         position="sticky"
-        sx={{ top: 0, zIndex: theme.zIndex.drawer + 1 }}
+        // sx={{ top: 0, zIndex: theme.zIndex.drawer + 1 }}
         elevation={isTrigged ? 8 : 0}
       >
         <Toolbar>
@@ -118,13 +139,14 @@ export const Header = () => {
                   xs: 'row-reverse',
                   md: 'row',
                 }}
-                alignItems={'center'}
+                alignItems={'flex-start'}
                 justifyContent={'space-between'}
               >
                 <Link href={'/#home'}>
                   <Button>
                     <Typography
-                      fontFamily={'Great Vibes'}
+                      fontFamily={'Bree Serif, serif'}
+                      fontWeight={400}
                       fontSize={{
                         xs: 24,
                         md: 32,
@@ -151,57 +173,6 @@ export const Header = () => {
                       }}
                     />
                   </IconButton>
-
-                  {/* <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-                  <Link href={'#sobre-mim'}>
-                    <MenuItem onClick={handleClose}>
-                      <Typography
-                        sx={{
-                          textDecoration: '',
-                          color: 'secondary.main',
-                        }}
-                      >
-                        Sobre
-                      </Typography>
-                    </MenuItem>
-                  </Link>
-                  <Link href={'/#desafios'}>
-                    <MenuItem onClick={handleClose}>
-                      <Typography
-                        sx={{
-                          textDecoration: '',
-                          color: 'secondary.main',
-                        }}
-                      >
-                        Desafios
-                      </Typography>
-                    </MenuItem>
-                  </Link>
-                  <Link href={'/#psicoterapia'}>
-                    <MenuItem onClick={handleClose}>
-                      <Typography
-                        sx={{
-                          textDecoration: '',
-                          color: 'secondary.main',
-                        }}
-                      >
-                        Psicoterapia
-                      </Typography>
-                    </MenuItem>
-                  </Link>
-                  <Link href={'/#comentarios'}>
-                    <MenuItem onClick={handleClose}>
-                      <Typography
-                        sx={{
-                          textDecoration: '',
-                          color: 'secondary.main',
-                        }}
-                      >
-                        Comentários
-                      </Typography>
-                    </MenuItem>
-                  </Link>
-                </Menu> */}
                 </Stack>
                 <Stack
                   sx={{
@@ -211,55 +182,23 @@ export const Header = () => {
                     },
                   }}
                 >
-                  <Link href={'/#sobre-mim'}>
-                    <Button
-                      variant="text"
-                      sx={{
-                        fontSize: 16,
-
-                        color: 'primary.contrastText',
-                      }}
-                    >
-                      Sobre
-                    </Button>
-                  </Link>
-                  <Link href={'/#desafios'}>
-                    <Button
-                      variant="text"
-                      sx={{
-                        fontSize: 16,
-
-                        color: 'primary.contrastText',
-                      }}
-                    >
-                      Desafios
-                    </Button>
-                  </Link>
-
-                  <Link href={'/#psicoterapia'}>
-                    <Button
-                      variant="text"
-                      sx={{
-                        fontSize: 16,
-
-                        color: 'primary.contrastText',
-                      }}
-                    >
-                      psicoterapia
-                    </Button>
-                  </Link>
-                  <Link href={'/#comentarios'}>
-                    <Button
-                      variant="text"
-                      sx={{
-                        fontSize: 16,
-
-                        color: 'primary.contrastText',
-                      }}
-                    >
-                      Comentários
-                    </Button>
-                  </Link>
+                  {items.map((item) => {
+                    return (
+                      <Link href={item.url} key={item.url}>
+                        <Button
+                          variant="text"
+                          sx={{
+                            fontSize: 16,
+                            fontFamily: 'Bree Serif, serif',
+                            fontWeight: 400,
+                            color: 'primary.contrastText',
+                          }}
+                        >
+                          {item.text}
+                        </Button>
+                      </Link>
+                    );
+                  })}
                 </Stack>
               </Stack>
             </MaxWidth>

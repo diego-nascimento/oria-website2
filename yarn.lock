@@ -244,6 +244,16 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.1.tgz"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
+"@fontsource/bree-serif@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/bree-serif/-/bree-serif-5.1.0.tgz#7f1975c978cc49032afa4dbb3d567fdc8b76fb7d"
+  integrity sha512-5Gu/SdKw1iQaQhvzH73JUrwtoBXYxTZ2WlsPvO17oUZYpaNk8yUreZl522hLDcyiKZVUUFsN6sXWpJJvepmtSg==
+
+"@fontsource/eb-garamond@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@fontsource/eb-garamond/-/eb-garamond-5.1.1.tgz#d41dfdedbb46001d3a16262c37cb924c6ce19fcf"
+  integrity sha512-fB/T2F+Hvic0f8AU1oZXc64OyWDrce5x01JUafnC+u2OSILMales+g4CtD02CPP7l9x2AydqD4yV/tK7YbKeMg==
+
 "@fontsource/playfair-display@^5.1.0":
   version "5.1.0"
   resolved "https://registry.npmjs.org/@fontsource/playfair-display/-/playfair-display-5.1.0.tgz"

@@ -1,6 +1,7 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Grid2, Stack, Typography, useTheme } from '@mui/material';
+import Link from 'next/link';
 
 export const Home = () => {
   const theme = useTheme();
@@ -53,17 +54,20 @@ export const Home = () => {
                   variant="h1"
                   fontSize={{
                     xs: 36,
-                    md: 52,
+                    md: 50,
                   }}
                   letterSpacing={1}
                   fontWeight={600}
                   color="secondary.contrastText"
                 >
-                  Após o positivo ​existe o​ <strong>desconhecido</strong>.
-                  Emoções diferentes e situações <strong>difíceis</strong>. Você
+                  Após o positivo ​existe o​ <strong>desconhecido</strong>. Você
                   não precisa ​enfrentar tudo isso​ <strong>sozinha</strong>.
                 </Typography>
-                <Box>
+                <Box
+                  component={Link}
+                  href="https://wa.me/message/5MAMLEFBR547D1"
+                  target="_blank"
+                >
                   <Button variant="contained" color="primary" size="large">
                     FALE COMIGO AGORA
                   </Button>

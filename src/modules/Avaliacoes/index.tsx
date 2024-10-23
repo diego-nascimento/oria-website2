@@ -7,6 +7,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
+import Link from 'next/link';
 
 const avaliacoes = [
   {
@@ -38,7 +39,7 @@ export const Avaliacoes = () => {
     <Stack
       paddingY={4}
       position={'relative'}
-      id="comentarios"
+      id="avaliacoes"
       paddingX={{
         xs: 2,
         md: 0,
@@ -68,8 +69,8 @@ export const Avaliacoes = () => {
               xs: 32,
               md: 42,
             }}
-            fontFamily={'Roboto Slab, serif'}
-            fontWeight={600}
+            fontFamily={'Bree Serif, serif'}
+            fontWeight={400}
           >
             Avaliações
           </Typography>
@@ -109,7 +110,13 @@ export const Avaliacoes = () => {
               md: 8,
             }}
           >
-            <Button variant="contained">Começar agora</Button>
+            <Box
+              component={Link}
+              href="https://wa.me/message/5MAMLEFBR547D1"
+              target="_blank"
+            >
+              <Button variant="contained">Começar agora</Button>
+            </Box>
           </Stack>
         </MaxWidth>
       </Stack>

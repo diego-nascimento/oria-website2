@@ -17,13 +17,15 @@ export default function HomePage() {
       <Header />
       <WhatsappButton />
       <Home />
-      <Second />
+      <Apresentacao />
       <Banner />
       <Caminhos />
+      <Second />
+
       <MulherAndando />
       <PIlares />
       <Avaliacoes />
-      <Apresentacao />
+
       <Questions />
       <Footer />
     </div>

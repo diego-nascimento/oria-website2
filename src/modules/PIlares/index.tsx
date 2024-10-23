@@ -11,6 +11,7 @@ import {
   useTheme,
 } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const PIlares = () => {
   const theme = useTheme();
@@ -24,8 +25,8 @@ export const PIlares = () => {
             xs: 32,
             md: 42,
           }}
-          fontFamily={'Roboto Slab, serif'}
-          fontWeight={600}
+          fontFamily={'Bree Serif, serif'}
+          fontWeight={400}
         >
           Seu tratamento na pratica
         </Typography>
@@ -222,13 +223,17 @@ export const PIlares = () => {
             }}
           >
             Você pode <strong>retomar as rédeas</strong> da sua{' '}
-            <strong>retomar as rédeas</strong>. E eu ​posso te auxiliar com isso
-            através de uma​ <strong>abordagem validada cientificamente</strong>.
+            <strong>vida</strong>. E eu ​posso te auxiliar nisso através de uma​{' '}
+            <strong>abordagem validada cientificamente</strong>.
           </Typography>
         </Stack>
 
         <Stack alignItems={'center'} marginTop={4}>
-          <Box>
+          <Box
+            component={Link}
+            href="https://wa.me/message/5MAMLEFBR547D1"
+            target="_blank"
+          >
             <Button variant="contained" size="large">
               Fale comigo
             </Button>

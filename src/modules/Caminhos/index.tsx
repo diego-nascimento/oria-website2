@@ -42,7 +42,7 @@ export const Caminhos = () => {
         xs: 4,
         md: 0,
       }}
-      id="psicoterapia"
+      id="tratamentos"
     >
       <MaxWidth>
         <Grid2 container spacing={4}>
@@ -78,10 +78,11 @@ export const Caminhos = () => {
                 xs: 28,
                 md: 32,
               }}
-              fontFamily={'Roboto Slab, serif'}
-              fontWeight={600}
+              fontFamily={'Bree Serif, serif'}
+              fontWeight={400}
+              color="secondary.main"
             >
-              Seu tratamento na pratica
+              Como posso te ajudar?
             </Typography>
 
             <Accordion
@@ -99,7 +100,7 @@ export const Caminhos = () => {
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
-                <Stack paddingY={2}>Pré-Natal psicologico</Stack>
+                <Stack paddingY={2}>Gestantes</Stack>
               </AccordionSummary>
 
               <AccordionDetails>
@@ -140,7 +141,7 @@ export const Caminhos = () => {
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
-                <Stack paddingY={2}>Luto</Stack>
+                <Stack paddingY={2}>Luto gestacional/perinatal</Stack>
               </AccordionSummary>
               <AccordionDetails>
                 <Stack
@@ -180,7 +181,9 @@ export const Caminhos = () => {
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
-                <Stack paddingY={2}>Perinatal</Stack>
+                <Stack paddingY={2}>
+                  Gestação de alto risco / diagnostico difícil
+                </Stack>
               </AccordionSummary>
               <AccordionDetails>
                 <Stack
@@ -220,7 +223,7 @@ export const Caminhos = () => {
                 aria-controls="panel1-content"
                 id="panel1-header"
               >
-                <Stack paddingY={2}>Psicoterapia</Stack>
+                <Stack paddingY={2}>Pós-parto / Puerpério</Stack>
               </AccordionSummary>
               <AccordionDetails>
                 <Stack

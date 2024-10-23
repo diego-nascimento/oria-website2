@@ -1,20 +1,16 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Stack, Typography, useTheme } from '@mui/material';
+import Link from 'next/link';
 
 export const Apresentacao = () => {
   const theme = useTheme();
   return (
-    <Stack
-      bgcolor={theme.palette.secondary.main}
-      paddingY={4}
-      paddingX={2}
-      id="sobre-mim"
-    >
+    <Stack paddingY={4} paddingX={2} id="sobre-mim">
       <MaxWidth>
         <Stack borderRadius={8} alignItems={'center'}>
           <Stack
-            bgcolor={theme.palette.background.default}
+            bgcolor={theme.palette.secondary.main}
             width={'100%'}
             maxWidth={600}
             paddingX={{
@@ -46,8 +42,8 @@ export const Apresentacao = () => {
             md: 52,
           }}
           textAlign={'center'}
-          fontWeight={700}
-          color="secondary.contrastText"
+          fontFamily={'Bree Serif, serif'}
+          fontWeight={400}
         >
           Ariane dos Santos Miranda - Psicóloga ​de Mães e gestantes
         </Typography>
@@ -68,17 +64,10 @@ export const Apresentacao = () => {
               xs: 18,
               md: 38,
             }}
-            color="secondary.contrastText"
           >
-            Sou{' '}
-            <Box component={'strong'} color="secondary.contrastText">
-              psicóloga
-            </Box>{' '}
-            com foco em{' '}
-            <Box component={'strong'} color="secondary.contrastText">
-              perinatalidade
-            </Box>{' '}
-            e ​parentalidade, ou seja: Dedico o meu trabalho para ​auxiliar{' '}
+            Sou <Box component={'strong'}>psicóloga</Box> com foco em{' '}
+            <Box component={'strong'}>perinatalidade</Box> e ​parentalidade, ou
+            seja: Dedico o meu trabalho para ​auxiliar{' '}
             <strong>mães e famílias</strong> do planejamento familiar até
             ​questões com a criação dos filhos.
           </Typography>
@@ -88,17 +77,11 @@ export const Apresentacao = () => {
               xs: 18,
               md: 38,
             }}
-            color="secondary.contrastText"
           >
             Eu sei o que é precisar de{' '}
-            <Box component={'strong'} color="secondary.contrastText">
-              apoio e acolhimento
-            </Box>{' '}
-            e não ​saber onde encontrar! É por isso que ao longo da minha
-            ​carreira venho me atualizando e me{' '}
-            <Box component={'strong'} color="secondary.contrastText">
-              especializando​
-            </Box>{' '}
+            <Box component={'strong'}>apoio e acolhimento</Box> e não ​saber
+            onde encontrar! É por isso que ao longo da minha ​carreira venho me
+            atualizando e me <Box component={'strong'}>especializando​</Box>{' '}
             para <strong>ajudar você</strong>.
           </Typography>
           <Typography
@@ -106,14 +89,12 @@ export const Apresentacao = () => {
               xs: 18,
               md: 38,
             }}
-            color="secondary.contrastText"
           >
             Para além da graduação em psicologia, sou{' '}
-            <Box component={'strong'} color="secondary.contrastText">
-              Pós-​graduada
-            </Box>{' '}
-            em Psicologia Perinatal e da Parentalidade e ​Pós-graduanda em{' '}
-            <strong>Terapias Cognitivas-​Comportamentais</strong>.
+            <Box component={'strong'}>Pós-​graduada</Box> em Psicologia
+            Perinatal e da Parentalidade e ​Pós-graduanda em{' '}
+            <strong>Terapias Cognitivas-​Comportamentais</strong> e
+            Pós-graduanda em <strong>Saúde Mental Perinatal</strong>.
           </Typography>
         </Stack>
         <Stack
@@ -123,7 +104,11 @@ export const Apresentacao = () => {
             md: 8,
           }}
         >
-          <Box>
+          <Box
+            component={Link}
+            href="https://wa.me/message/5MAMLEFBR547D1"
+            target="_blank"
+          >
             <Button variant="contained" size="large">
               Agendar agora
             </Button>

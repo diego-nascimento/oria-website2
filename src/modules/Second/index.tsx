@@ -3,11 +3,12 @@ import { MaxWidth } from '@/shared/components/MaxWidth';
 
 import { Box, Button, Grid2, Stack, Typography, useTheme } from '@mui/material';
 import { AssetImage } from './assets/assetImage';
+import Link from 'next/link';
 
 export const Second = () => {
   const theme = useTheme();
   return (
-    <Stack id="desafios">
+    <Stack id="emocoes">
       <MaxWidth>
         <Stack paddingX={2} paddingY={4} gap={4}>
           <Stack>
@@ -272,7 +273,11 @@ export const Second = () => {
             </Typography>
           </Stack>
           <Stack alignItems={'center'}>
-            <Box>
+            <Box
+              component={Link}
+              href="https://wa.me/message/5MAMLEFBR547D1"
+              target="_blank"
+            >
               <Button variant="contained" size="large">
                 Quero Ajuda
               </Button>
