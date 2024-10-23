@@ -78,8 +78,8 @@ export const Avaliacoes = () => {
           <Stack
             gap={4}
             marginTop={{
-              xs: 4,
-              md: 8,
+              xs: 2,
+              md: 4,
             }}
           >
             {avaliacoes.map((av) => {

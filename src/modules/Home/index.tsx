@@ -86,7 +86,7 @@ export const Home = () => {
                 lg: 'auto',
               }}
               sx={{
-                backgroundImage: 'url(/ariane.jpg)',
+                backgroundImage: 'url(/ariane.png)',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',

@@ -53,8 +53,8 @@ export const Caminhos = () => {
             }}
             sx={{
               minHeight: 500,
-              backgroundImage: 'url(/ariane2.png)',
-              backgroundPosition: 'top',
+              backgroundImage: 'url(/ariane2.jpg)',
+              backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
               backgroundSize: 'cover',
 
