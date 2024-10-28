@@ -35,21 +35,23 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
             textDecoration: 'none',
           },
 
-          '@keyframes leftappear': {
+          '@keyframes pulse': {
             '0%': {
-              opacity: 0,
-              transform: 'translate(-200px)',
+              transform: 'scale(.95)',
+              boxShadow: '0 0 0 0 rgba(37, 211, 102, .7)',
             },
-            '50%': {
-              opacity: 0.5,
-              transform: 'translate(-200px)',
+            '70%': {
+              transform: 'scale(1)',
+              boxShadow: '0 0 0 20px rgba(37, 211, 102, 0)',
             },
             '100%': {
-              opacity: 1,
-              transform: 'translate(0)',
+              transform: 'scale(.95)',
+              boxShadow: '0 0 0 0 rgba(37, 211, 102, 0)',
             },
           },
-          '.appearleft': {},
+          '.appearleft': {
+            animation: 'pulse 2s infinite',
+          },
         })}
       />
       {children}

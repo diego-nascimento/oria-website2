@@ -91,7 +91,6 @@ export const Apresentacao = () => {
             textAlign={'center'}
             fontFamily={'Bree Serif, serif'}
             fontWeight={400}
-            className="appearleft"
           >
             Ariane dos Santos Miranda - Psicóloga ​de Mães e gestantes
           </Typography>

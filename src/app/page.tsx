@@ -10,12 +10,14 @@ import { Second } from '@/modules/Second';
 import { Apresentacao } from '@/modules/Apresentacao';
 import { WhatsappButton } from '@/modules/WhatsappButton';
 import { Caminhos } from '@/modules/Caminhos';
+import { Stack } from '@mui/material';
 
 export default function HomePage() {
   return (
-    <div>
-      <Header />
+    <Stack width={'100%'} height={'100vh'} overflow={'auto'}>
       <WhatsappButton />
+      <Header />
+
       <Home />
       <Apresentacao />
       <Banner />
@@ -26,6 +28,6 @@ export default function HomePage() {
       <Avaliacoes />
       <Questions />
       <Footer />
-    </div>
+    </Stack>
   );
 }

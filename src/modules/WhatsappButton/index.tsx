@@ -8,8 +8,11 @@ export const WhatsappButton = () => {
     <Box
       sx={{
         position: 'fixed',
-        bottom: 4,
-        right: 8,
+        bottom: 8,
+        right: {
+          xs: 8,
+          md: 24,
+        },
         zIndex: theme.zIndex.drawer - 1,
       }}
     >
@@ -19,6 +22,7 @@ export const WhatsappButton = () => {
         target="_blank"
       >
         <Avatar
+          className="appearleft"
           sx={{
             backgroundColor: '#25d366',
             width: 60,
