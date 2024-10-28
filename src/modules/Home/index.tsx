@@ -1,10 +1,24 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Grid2, Stack, Typography, useTheme } from '@mui/material';
+import { useAnimation, useInView } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export const Home = () => {
   const theme = useTheme();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
+    }
+  }, [isInView, mainControls]);
+
   return (
     <Stack
       alignItems={'center'}
@@ -40,41 +54,96 @@ export const Home = () => {
               alignItems={'center'}
             >
               <Stack height={'100%'} justifyContent={'center'} gap={4}>
-                <Typography
-                  variant="h1"
-                  textTransform={'uppercase'}
-                  fontSize={'16px'}
-                  fontWeight={600}
-                  color="#fff"
-                  letterSpacing={2}
-                >
-                  Psicologa de Mães Gestantes
-                </Typography>
-                <Typography
-                  variant="h1"
-                  fontSize={{
-                    xs: 36,
-                    md: 50,
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 20, scale: 0.99 },
+                    visible: { opacity: 1, y: 0, scale: 1 },
                   }}
-                  letterSpacing={1}
-                  fontWeight={600}
-                  color="secondary.contrastText"
+                  initial={'hidden'}
+                  animate={'visible'}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.25,
+                    ease: 'easeOut',
+                  }}
                 >
-                  Após o positivo ​existe o​ <strong>desconhecido</strong>. Você
-                  não precisa ​enfrentar tudo isso​ <strong>sozinha</strong>.
-                </Typography>
-                <Box
-                  component={Link}
-                  href="https://wa.me/message/5MAMLEFBR547D1"
-                  target="_blank"
+                  <Typography
+                    variant="h1"
+                    textTransform={'uppercase'}
+                    fontSize={'16px'}
+                    fontWeight={600}
+                    color="#fff"
+                    letterSpacing={2}
+                  >
+                    Psicologa de Mães Gestantes
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 40, scale: 0.99 },
+                    visible: { opacity: 1, y: 0, scale: 1 },
+                  }}
+                  initial={'hidden'}
+                  animate={'visible'}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.5,
+                    ease: 'easeOut',
+                  }}
                 >
-                  <Button variant="contained" color="primary" size="large">
-                    FALE COMIGO AGORA
-                  </Button>
-                </Box>
+                  <Typography
+                    variant="h1"
+                    fontSize={{
+                      xs: 36,
+                      md: 50,
+                    }}
+                    letterSpacing={1}
+                    fontWeight={600}
+                    color="secondary.contrastText"
+                  >
+                    Após o positivo ​existe o​ <strong>desconhecido</strong>.
+                    Você não precisa ​enfrentar tudo isso​{' '}
+                    <strong>sozinha</strong>.
+                  </Typography>
+                </motion.div>
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, x: -100, scale: 0.99 },
+                    visible: { opacity: 1, x: 0, scale: 1 },
+                  }}
+                  initial={'hidden'}
+                  animate={'visible'}
+                  transition={{
+                    duration: 0.75,
+                    delay: 0.45,
+                    ease: 'easeOut',
+                  }}
+                >
+                  <Box
+                    component={Link}
+                    href="https://wa.me/message/5MAMLEFBR547D1"
+                    target="_blank"
+                  >
+                    <Button variant="contained" color="primary" size="large">
+                      FALE COMIGO AGORA
+                    </Button>
+                  </Box>
+                </motion.div>
               </Stack>
             </Grid2>
             <Grid2
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 100 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial={'hidden'}
+              animate={'visible'}
+              transition={{
+                duration: 0.5,
+                delay: 1,
+                ease: 'easeOut',
+              }}
               size={{
                 xs: 12,
                 lg: 7,
@@ -113,18 +182,32 @@ export const Home = () => {
           zIndex: 10,
         }}
       >
-        <Typography
-          variant="h3"
-          color="#fff"
-          fontSize={{
-            xs: 22,
-            md: 42,
+        <motion.div
+          variants={{
+            hidden: { opacity: 0, scale: 0.9 },
+            visible: { opacity: 1, y: 0, scale: 1 },
           }}
-          fontWeight={700}
-          textAlign={'center'}
+          initial={'hidden'}
+          animate={'visible'}
+          transition={{
+            duration: 0.5,
+            delay: 1,
+            ease: 'easeOut',
+          }}
         >
-          Psicóloga para Mães - Psicólogas De Gestante - Psicóloga Online
-        </Typography>
+          <Typography
+            variant="h3"
+            color="#fff"
+            fontSize={{
+              xs: 22,
+              md: 42,
+            }}
+            fontWeight={700}
+            textAlign={'center'}
+          >
+            Psicóloga para Mães - Psicólogas De Gestante - Psicóloga Online
+          </Typography>
+        </motion.div>
       </Stack>
     </Stack>
   );

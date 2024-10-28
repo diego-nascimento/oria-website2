@@ -34,6 +34,22 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
             color: 'inherit',
             textDecoration: 'none',
           },
+
+          '@keyframes leftappear': {
+            '0%': {
+              opacity: 0,
+              transform: 'translate(-200px)',
+            },
+            '50%': {
+              opacity: 0.5,
+              transform: 'translate(-200px)',
+            },
+            '100%': {
+              opacity: 1,
+              transform: 'translate(0)',
+            },
+          },
+          '.appearleft': {},
         })}
       />
       {children}

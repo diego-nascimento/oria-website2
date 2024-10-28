@@ -10,26 +10,56 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import { useAnimation, useInView } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 export const PIlares = () => {
   const theme = useTheme();
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
+
   return (
-    <Stack py={4} px={2} id="psicoterapia">
+    <Stack py={4} px={2} id="psicoterapia" ref={ref}>
       <MaxWidth>
-        <Typography
-          textTransform={'uppercase'}
-          textAlign={'center'}
-          fontSize={{
-            xs: 32,
-            md: 42,
+        <Stack
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, scale: 1.1 },
+            visible: { opacity: 1, scale: 1 },
           }}
-          fontFamily={'Bree Serif, serif'}
-          fontWeight={400}
+          initial={'hidden'}
+          animate={mainControls}
+          transition={{
+            duration: 1,
+            delay: 0.5,
+            ease: 'easeIn',
+          }}
         >
-          Seu tratamento na pratica
-        </Typography>
+          <Typography
+            textTransform={'uppercase'}
+            textAlign={'center'}
+            fontSize={{
+              xs: 32,
+              md: 42,
+            }}
+            fontFamily={'Bree Serif, serif'}
+            fontWeight={400}
+          >
+            Seu tratamento na pratica
+          </Typography>
+        </Stack>
+
         <Grid2 container spacing={4} marginTop={4}>
           <Grid2
             size={{
@@ -37,7 +67,21 @@ export const PIlares = () => {
               lg: 6,
             }}
           >
-            <Stack alignItems={'center'}>
+            <Stack
+              alignItems={'center'}
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: -70, filter: 'blur(1rem)' },
+                visible: { opacity: 1, x: 0, filter: 'blur(0rem)' },
+              }}
+              initial={'hidden'}
+              animate={mainControls}
+              transition={{
+                duration: 1,
+                delay: 0.3,
+                ease: 'easeOut',
+              }}
+            >
               <Stack width={'100%'} maxWidth={750} justifyContent={'center'}>
                 <Image
                   src={'/image.png'}
@@ -58,6 +102,19 @@ export const PIlares = () => {
               <Stack width={'100%'} maxWidth={750} justifyContent={'center'}>
                 <Stack gap={4} marginTop={4}>
                   <Stack
+                    ref={ref}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: 70 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    transition={{
+                      duration: 1,
+                      delay: 0.3,
+                      ease: 'easeOut',
+                    }}
                     direction={{
                       xs: 'column',
                       md: 'row',
@@ -91,6 +148,19 @@ export const PIlares = () => {
                     </Typography>
                   </Stack>
                   <Stack
+                    ref={ref}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: 70 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    transition={{
+                      duration: 1,
+                      delay: 0.5,
+                      ease: 'easeOut',
+                    }}
                     direction={{
                       xs: 'column',
                       md: 'row',
@@ -128,6 +198,19 @@ export const PIlares = () => {
                     </Typography>
                   </Stack>
                   <Stack
+                    ref={ref}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: 70 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    transition={{
+                      duration: 1,
+                      delay: 0.7,
+                      ease: 'easeOut',
+                    }}
                     direction={{
                       xs: 'column',
                       md: 'row',
@@ -165,6 +248,19 @@ export const PIlares = () => {
                     </Typography>
                   </Stack>
                   <Stack
+                    ref={ref}
+                    component={motion.div}
+                    variants={{
+                      hidden: { opacity: 0, x: 70 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    transition={{
+                      duration: 1,
+                      delay: 0.9,
+                      ease: 'easeOut',
+                    }}
                     direction={{
                       xs: 'column',
                       md: 'row',
@@ -210,7 +306,21 @@ export const PIlares = () => {
             </Stack>
           </Grid2>
         </Grid2>
-        <Stack>
+        <Stack
+          ref={ref}
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          initial={'hidden'}
+          animate={mainControls}
+          transition={{
+            duration: 1,
+            delay: 0.8,
+            ease: 'easeOut',
+          }}
+        >
           <Typography
             fontSize={{
               xs: 18,
@@ -228,7 +338,22 @@ export const PIlares = () => {
           </Typography>
         </Stack>
 
-        <Stack alignItems={'center'} marginTop={4}>
+        <Stack
+          alignItems={'center'}
+          marginTop={4}
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, x: -100 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          initial={'hidden'}
+          animate={mainControls}
+          transition={{
+            duration: 0.5,
+            delay: 1,
+            ease: 'easeOut',
+          }}
+        >
           <Box
             component={Link}
             href="https://wa.me/message/5MAMLEFBR547D1"

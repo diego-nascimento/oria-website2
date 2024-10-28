@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@carlos8a/react-whatsapp-floating-button": "^1.1.5",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@fontsource/bree-serif": "^5.1.0",
@@ -17,11 +18,15 @@
     "@fontsource/roboto-slab": "^5.1.0",
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
+    "add": "^2.0.6",
+    "framer-motion": "^11.11.10",
     "next": "14.2.13",
     "next-videos": "^1.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-material-ui-carousel": "^3.4.2"
+    "react-floating-whatsapp": "^5.0.8",
+    "react-material-ui-carousel": "^3.4.2",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@types/node": "^20",

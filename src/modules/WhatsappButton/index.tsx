@@ -1,33 +1,20 @@
 'use client';
-import { Avatar, Box, IconButton, useTheme } from '@mui/material';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import Link from 'next/link';
+import { FloatingWhatsApp } from '@carlos8a/react-whatsapp-floating-button';
+
 export const WhatsappButton = () => {
-  const theme = useTheme();
   return (
-    <Box
-      sx={{
-        position: 'fixed',
-        bottom: 4,
-        right: 8,
-        zIndex: theme.zIndex.drawer - 1,
-      }}
-    >
-      <IconButton
-        component={Link}
-        href="https://wa.me/message/5MAMLEFBR547D1"
-        target="_blank"
-      >
-        <Avatar
-          sx={{
-            backgroundColor: '#25d366',
-            width: 60,
-            height: 60,
-          }}
-        >
-          <WhatsAppIcon fontSize="large" />
-        </Avatar>
-      </IconButton>
-    </Box>
+    <div>
+      <FloatingWhatsApp
+        phoneNumber="5532999658169" // Required
+        accountName="Ariane Miranda" // Optional
+        avatar="/oria-whatsapp.png" // Optional
+        initialMessageByServer="Olá! Como posso te ajudar??" // Optional
+        initialMessageByClient="Alo gata, preciso dessa mensagem inicial pro whatsapp pra por aqui" // Optional
+        statusMessage="Disponível" // Optional
+        startChatText="Comece a falar comigo" // Optional
+        tooltipText="Precisa de ajuda! Fale comigo" // Optional
+        allowEsc={true}
+      />
+    </div>
   );
 };

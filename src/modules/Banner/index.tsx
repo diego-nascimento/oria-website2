@@ -1,10 +1,21 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Grid2, Stack, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Carousel from 'react-material-ui-carousel';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 export const Banner = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 1 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
+
   return (
     <React.Fragment>
       <Stack
@@ -20,6 +31,7 @@ export const Banner = () => {
           xs: 'none',
           lg: 'flex',
         }}
+        ref={ref}
       >
         <MaxWidth>
           <Grid2
@@ -30,7 +42,21 @@ export const Banner = () => {
             }}
           >
             <Grid2 size={{ xs: 14, md: 4 }}>
-              <Stack justifyContent={'center'}>
+              <Stack
+                justifyContent={'center'}
+                component={motion.div}
+                variants={{
+                  hidden: { opacity: 0, x: -40 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                initial={'hidden'}
+                animate={mainControls}
+                transition={{
+                  duration: 0.5,
+                  delay: 0,
+                  ease: 'easeIn',
+                }}
+              >
                 <Typography
                   fontSize={{
                     xs: 28,
@@ -61,7 +87,21 @@ export const Banner = () => {
                 </Typography>
               </Stack>
             </Grid2>
-            <Grid2 size={{ xs: 14, md: 4 }}>
+            <Grid2
+              size={{ xs: 14, md: 4 }}
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              initial={'hidden'}
+              animate={mainControls}
+              transition={{
+                duration: 0.5,
+                delay: 0,
+                ease: 'easeIn',
+              }}
+            >
               <Typography
                 fontSize={{
                   xs: 28,
@@ -75,7 +115,21 @@ export const Banner = () => {
                 Pesquisas
               </Typography>
             </Grid2>
-            <Grid2 size={{ xs: 14, md: 4 }}>
+            <Grid2
+              size={{ xs: 14, md: 4 }}
+              component={motion.div}
+              variants={{
+                hidden: { opacity: 0, x: 40 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              initial={'hidden'}
+              animate={mainControls}
+              transition={{
+                duration: 0.5,
+                delay: 0,
+                ease: 'easeIn',
+              }}
+            >
               <Typography
                 fontSize={{
                   xs: 28,

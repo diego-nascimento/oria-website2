@@ -21,11 +21,9 @@ export default function HomePage() {
       <Banner />
       <Caminhos />
       <Second />
-
       <MulherAndando />
       <PIlares />
       <Avaliacoes />
-
       <Questions />
       <Footer />
     </div>

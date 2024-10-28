@@ -10,6 +10,8 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MaxWidth } from '@/shared/components/MaxWidth';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const questions = [
   {
@@ -54,6 +56,15 @@ const questions = [
 ];
 
 export const Questions = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
   return (
     <MaxWidth>
       <Grid2
@@ -64,10 +75,23 @@ export const Questions = () => {
         }}
         justifyContent={'center'}
         id="duvidas"
+        ref={ref}
       >
         <Grid2
           size={{
             xs: 12,
+          }}
+          component={motion.div}
+          variants={{
+            hidden: { opacity: 0, scale: 1.1 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          initial={'hidden'}
+          animate={mainControls}
+          transition={{
+            duration: 1,
+            delay: 0,
+            ease: 'easeIn',
           }}
         >
           <Stack
@@ -96,12 +120,24 @@ export const Questions = () => {
           }}
         >
           <Stack direction={'column'} gap={1}>
-            {questions.map((qs) => {
+            {questions.map((qs, index) => {
               return (
                 <Stack
                   key={qs.question}
                   sx={{
                     borderRadius: 8,
+                  }}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
+                    visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
+                  }}
+                  initial={'hidden'}
+                  animate={mainControls}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: 'easeIn',
                   }}
                 >
                   <Accordion

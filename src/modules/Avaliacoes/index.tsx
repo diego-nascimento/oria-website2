@@ -1,3 +1,4 @@
+'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import {
   Box,
@@ -7,7 +8,10 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
+import { useAnimation, useInView } from 'framer-motion';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const avaliacoes = [
   {
@@ -35,6 +39,16 @@ const avaliacoes = [
 ];
 
 export const Avaliacoes = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
+
   return (
     <Stack
       paddingY={4}
@@ -44,6 +58,7 @@ export const Avaliacoes = () => {
         xs: 2,
         md: 0,
       }}
+      ref={ref}
     >
       <Stack
         sx={{
@@ -62,18 +77,33 @@ export const Avaliacoes = () => {
       />
       <Stack zIndex={1}>
         <MaxWidth>
-          <Typography
-            textTransform={'uppercase'}
-            textAlign={'center'}
-            fontSize={{
-              xs: 32,
-              md: 42,
+          <Stack
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, scale: 1.1 },
+              visible: { opacity: 1, scale: 1 },
             }}
-            fontFamily={'Bree Serif, serif'}
-            fontWeight={400}
+            initial={'hidden'}
+            animate={mainControls}
+            transition={{
+              duration: 1,
+              delay: 0,
+              ease: 'easeIn',
+            }}
           >
-            Avaliações
-          </Typography>
+            <Typography
+              textTransform={'uppercase'}
+              textAlign={'center'}
+              fontSize={{
+                xs: 32,
+                md: 42,
+              }}
+              fontFamily={'Bree Serif, serif'}
+              fontWeight={400}
+            >
+              Avaliações
+            </Typography>
+          </Stack>
 
           <Stack
             gap={4}
@@ -82,9 +112,25 @@ export const Avaliacoes = () => {
               md: 4,
             }}
           >
-            {avaliacoes.map((av) => {
+            {avaliacoes.map((av, index) => {
               return (
-                <Card variant="elevation" elevation={0} key={av.text}>
+                <Card
+                  variant="elevation"
+                  elevation={0}
+                  key={av.text}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
+                    visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
+                  }}
+                  initial={'hidden'}
+                  animate={mainControls}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: 'easeIn',
+                  }}
+                >
                   <CardContent>
                     <Typography
                       fontSize={{
@@ -93,7 +139,7 @@ export const Avaliacoes = () => {
                       }}
                     >
                       {av.text}
-                      {'   '}
+
                       <Box component={'strong'} color={'#001f3f'}>
                         {av.person}
                       </Box>

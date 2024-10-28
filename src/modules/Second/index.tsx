@@ -4,14 +4,52 @@ import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Grid2, Stack, Typography, useTheme } from '@mui/material';
 import { AssetImage } from './assets/assetImage';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { useAnimation, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+const problemas = [
+  'Ansiedade',
+  'Medo',
+  'Culpa',
+  'Frustração',
+  'Tristeza',
+  'Solidão',
+  'Raiva',
+  'Insegurança',
+];
 
 export const Second = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
+
   const theme = useTheme();
+
   return (
     <Stack id="emocoes">
       <MaxWidth>
-        <Stack paddingX={2} paddingY={4} gap={4}>
-          <Stack>
+        <Stack paddingX={2} paddingY={4} gap={4} ref={ref}>
+          <Stack
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
+              visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
+            }}
+            initial={'hidden'}
+            animate={mainControls}
+            transition={{
+              duration: 1,
+              delay: 0,
+              ease: 'easeIn',
+            }}
+          >
             <Typography
               fontSize={{
                 xs: 20,
@@ -34,6 +72,18 @@ export const Second = () => {
             </Typography>
           </Stack>
           <Stack
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 40, scale: 1.1, filter: 'blur(1rem)' },
+              visible: { opacity: 1, y: 0, scale: 1, filter: 'blur(0rem)' },
+            }}
+            initial={'hidden'}
+            animate={mainControls}
+            transition={{
+              duration: 1,
+              delay: 0.1,
+              ease: 'easeIn',
+            }}
             position={'relative'}
             justifyContent={'center'}
             alignItems={'center'}
@@ -45,7 +95,20 @@ export const Second = () => {
               <AssetImage />
             </Box>
           </Stack>
-          <Stack>
+          <Stack
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
+              visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
+            }}
+            initial={'hidden'}
+            animate={mainControls}
+            transition={{
+              duration: 1,
+              delay: 0.2,
+              ease: 'easeIn',
+            }}
+          >
             <Typography
               fontSize={{
                 xs: 20,
@@ -73,192 +136,61 @@ export const Second = () => {
               md: 2,
             }}
           >
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                ansiedade
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                medo
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                culpa
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                frustração
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                tristeza
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                solidão
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                raiva
-              </Typography>
-            </Grid2>
-            <Grid2
-              size={{
-                xs: 6,
-                md: 3,
-              }}
-              sx={{
-                bgcolor: theme.palette.secondary.main,
-                borderRadius: 50,
-                paddingY: 1,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Typography
-                fontSize={22}
-                textTransform={'capitalize'}
-                fontWeight={700}
-                color="#ffffff"
-              >
-                insegurança
-              </Typography>
-            </Grid2>
+            {problemas.map((problema, index) => {
+              return (
+                <Grid2
+                  key={problema}
+                  component={motion.div}
+                  variants={{
+                    hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
+                    visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
+                  }}
+                  initial={'hidden'}
+                  animate={mainControls}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + index * 0.1,
+                    ease: 'easeIn',
+                  }}
+                  size={{
+                    xs: 6,
+                    md: 3,
+                  }}
+                  sx={{
+                    bgcolor: theme.palette.secondary.main,
+                    borderRadius: 50,
+                    paddingY: 1,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <Typography
+                    fontSize={22}
+                    textTransform={'capitalize'}
+                    fontWeight={700}
+                    color="#ffffff"
+                  >
+                    {problema}
+                  </Typography>
+                </Grid2>
+              );
+            })}
           </Grid2>
-          <Stack>
+          <Stack
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
+              visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
+            }}
+            initial={'hidden'}
+            animate={mainControls}
+            transition={{
+              duration: 1,
+              delay: 0.5,
+              ease: 'easeIn',
+            }}
+          >
             <Typography
               fontSize={{
                 xs: 20,
@@ -272,7 +204,21 @@ export const Second = () => {
               <strong>eu sei</strong> como te <strong>ajudar</strong>.
             </Typography>
           </Stack>
-          <Stack alignItems={'center'}>
+          <Stack
+            alignItems={'center'}
+            component={motion.div}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            initial={'hidden'}
+            animate={mainControls}
+            transition={{
+              duration: 0.5,
+              delay: 0.6,
+              ease: 'easeOut',
+            }}
+          >
             <Box
               component={Link}
               href="https://wa.me/message/5MAMLEFBR547D1"

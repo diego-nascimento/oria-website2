@@ -21,7 +21,8 @@ import {
   useTheme,
 } from '@mui/material';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
 
 const items = [
   {
@@ -56,6 +57,16 @@ export const Header = () => {
   const isTrigged = useScrollTrigger({
     threshold: 0,
   });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
+    }
+  }, [isInView, mainControls]);
 
   const [anchorEl, setAnchorEl] = useState<boolean>(false);
   const open = Boolean(anchorEl);
@@ -131,6 +142,7 @@ export const Header = () => {
               xs: 0,
               md: 1,
             }}
+            ref={ref}
           >
             <MaxWidth>
               <Stack
@@ -143,19 +155,29 @@ export const Header = () => {
                 justifyContent={'space-between'}
               >
                 <Link href={'/#home'}>
-                  <Button>
-                    <Typography
-                      fontFamily={'Bree Serif, serif'}
-                      fontWeight={400}
-                      fontSize={{
-                        xs: 24,
-                        md: 32,
-                      }}
-                      color="secondary.contrastText"
-                    >
-                      Ariane Miranda
-                    </Typography>
-                  </Button>
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0, x: -30, scale: 0.99 },
+                      visible: { opacity: 1, x: 0, y: 0, scale: 1 },
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    transition={{ duration: 1, delay: 0.25, ease: 'easeInOut' }}
+                  >
+                    <Button>
+                      <Typography
+                        fontFamily={'Bree Serif, serif'}
+                        fontWeight={400}
+                        fontSize={{
+                          xs: 24,
+                          md: 32,
+                        }}
+                        color="secondary.contrastText"
+                      >
+                        Ariane Miranda
+                      </Typography>
+                    </Button>
+                  </motion.div>
                 </Link>
 
                 <Stack
@@ -166,37 +188,63 @@ export const Header = () => {
                     },
                   }}
                 >
-                  <IconButton onClick={toggleDrawer}>
-                    <MenuIcon
-                      sx={{
-                        color: 'secondary.contrastText',
-                      }}
-                    />
-                  </IconButton>
+                  <motion.div
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: { opacity: 1 },
+                    }}
+                    initial={'hidden'}
+                    animate={mainControls}
+                    transition={{ duration: 1, delay: 1, ease: 'easeInOut' }}
+                  >
+                    <IconButton onClick={toggleDrawer}>
+                      <MenuIcon
+                        sx={{
+                          color: 'secondary.contrastText',
+                        }}
+                      />
+                    </IconButton>
+                  </motion.div>
                 </Stack>
                 <Stack
                   sx={{
                     display: {
                       xs: 'none',
-                      md: 'block',
+                      md: 'flex',
                     },
                   }}
+                  direction={'row'}
                 >
-                  {items.map((item) => {
+                  {items.map((item, index) => {
                     return (
-                      <Link href={item.url} key={item.url}>
-                        <Button
-                          variant="text"
-                          sx={{
-                            fontSize: 16,
-                            fontFamily: 'Bree Serif, serif',
-                            fontWeight: 400,
-                            color: 'primary.contrastText',
-                          }}
-                        >
-                          {item.text}
-                        </Button>
-                      </Link>
+                      <motion.div
+                        variants={{
+                          menuItemHidden: { opacity: 0, y: 10, scale: 0.99 },
+                          menuItemVisible: { opacity: 1, y: 0, scale: 1 },
+                        }}
+                        initial={'menuItemHidden'}
+                        animate={mainControls}
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.25,
+                          ease: 'easeOut',
+                        }}
+                        key={item.url}
+                      >
+                        <Link href={item.url} key={item.url}>
+                          <Button
+                            variant="text"
+                            sx={{
+                              fontSize: 16,
+                              fontFamily: 'Bree Serif, serif',
+                              fontWeight: 400,
+                              color: 'primary.contrastText',
+                            }}
+                          >
+                            {item.text}
+                          </Button>
+                        </Link>
+                      </motion.div>
                     );
                   })}
                 </Stack>

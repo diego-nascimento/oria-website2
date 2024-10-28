@@ -1,9 +1,20 @@
 'use client';
 
 import { Box, Stack, Typography, useTheme } from '@mui/material';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 export const MulherAndando = () => {
   const theme = useTheme();
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start('visible');
+    }
+  }, [isInView, mainControls]);
   return (
     <Stack
       overflow={'hidden'}
@@ -21,6 +32,19 @@ export const MulherAndando = () => {
       paddingX={2}
     >
       <Stack
+        ref={ref}
+        component={motion.div}
+        variants={{
+          hidden: { opacity: 0, x: 40, filter: 'blur(1rem)' },
+          visible: { opacity: 1, x: 0, filter: 'blur(0rem)' },
+        }}
+        initial={'hidden'}
+        animate={mainControls}
+        transition={{
+          duration: 1,
+          delay: 0.3,
+          ease: 'easeOut',
+        }}
         zIndex={20}
         bgcolor={theme.palette.background.default}
         borderRadius={4}
