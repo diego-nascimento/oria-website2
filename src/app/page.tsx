@@ -11,6 +11,7 @@ import { Apresentacao } from '@/modules/Apresentacao';
 import { WhatsappButton } from '@/modules/WhatsappButton';
 import { Caminhos } from '@/modules/Caminhos';
 import { Stack } from '@mui/material';
+import { m } from 'framer-motion';
 
 export default function HomePage() {
   return (

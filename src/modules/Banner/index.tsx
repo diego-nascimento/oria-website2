@@ -19,7 +19,6 @@ export const Banner = () => {
   return (
     <React.Fragment>
       <Stack
-        overflow={'hidden'}
         paddingY={{
           xs: 4,
           md: 14,
