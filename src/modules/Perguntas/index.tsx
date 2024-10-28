@@ -76,6 +76,7 @@ export const Questions = () => {
         justifyContent={'center'}
         id="duvidas"
         ref={ref}
+        overflow={'hidden'}
       >
         <Grid2
           size={{

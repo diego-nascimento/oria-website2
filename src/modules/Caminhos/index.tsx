@@ -54,6 +54,7 @@ export const Caminhos = () => {
       }}
       id="tratamentos"
       ref={ref}
+      overflow={'hidden'}
     >
       <MaxWidth>
         <Grid2 container spacing={4} marginTop={2}>

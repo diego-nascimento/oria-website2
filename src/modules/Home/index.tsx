@@ -1,23 +1,13 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Grid2, Stack, Typography, useTheme } from '@mui/material';
-import { useAnimation, useInView } from 'framer-motion';
+
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+
 import { motion } from 'framer-motion';
 
 export const Home = () => {
   const theme = useTheme();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
-    }
-  }, [isInView, mainControls]);
 
   return (
     <Stack
@@ -26,6 +16,7 @@ export const Home = () => {
       height={'100%'}
       bgcolor={theme.palette.secondary.main}
       id="home"
+      overflow={'hidden'}
     >
       <MaxWidth>
         <Stack
@@ -63,7 +54,7 @@ export const Home = () => {
                   animate={'visible'}
                   transition={{
                     duration: 1.2,
-                    delay: 0.25,
+                    delay: 0,
                     ease: 'easeOut',
                   }}
                 >
@@ -87,7 +78,7 @@ export const Home = () => {
                   animate={'visible'}
                   transition={{
                     duration: 1.2,
-                    delay: 0.5,
+                    delay: 0,
                     ease: 'easeOut',
                   }}
                 >

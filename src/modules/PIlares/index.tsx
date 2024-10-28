@@ -35,7 +35,7 @@ export const PIlares = () => {
         <Stack
           component={motion.div}
           variants={{
-            hidden: { opacity: 0, scale: 1.1 },
+            hidden: { opacity: 0 },
             visible: { opacity: 1, scale: 1 },
           }}
           initial={'hidden'}
@@ -60,7 +60,7 @@ export const PIlares = () => {
           </Typography>
         </Stack>
 
-        <Grid2 container spacing={4} marginTop={4}>
+        <Grid2 container spacing={4} marginTop={4} overflow={'hidden'}>
           <Grid2
             size={{
               xs: 12,
@@ -98,7 +98,7 @@ export const PIlares = () => {
               lg: 6,
             }}
           >
-            <Stack alignItems={'center'}>
+            <Stack alignItems={'center'} overflow={'hidden'}>
               <Stack width={'100%'} maxWidth={750} justifyContent={'center'}>
                 <Stack gap={4} marginTop={4}>
                   <Stack
@@ -307,6 +307,7 @@ export const PIlares = () => {
           </Grid2>
         </Grid2>
         <Stack
+          overflow={'hidden'}
           ref={ref}
           component={motion.div}
           variants={{
@@ -339,6 +340,7 @@ export const PIlares = () => {
         </Stack>
 
         <Stack
+          overflow={'hidden'}
           alignItems={'center'}
           marginTop={4}
           component={motion.div}

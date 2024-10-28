@@ -33,7 +33,7 @@ export const Second = () => {
   const theme = useTheme();
 
   return (
-    <Stack id="emocoes">
+    <Stack id="emocoes" overflow={'hidden'}>
       <MaxWidth>
         <Stack paddingX={2} paddingY={4} gap={4} ref={ref}>
           <Stack
@@ -74,7 +74,7 @@ export const Second = () => {
           <Stack
             component={motion.div}
             variants={{
-              hidden: { opacity: 0, y: 40, scale: 1.1, filter: 'blur(1rem)' },
+              hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
               visible: { opacity: 1, y: 0, scale: 1, filter: 'blur(0rem)' },
             }}
             initial={'hidden'}

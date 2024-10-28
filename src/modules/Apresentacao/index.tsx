@@ -24,7 +24,7 @@ export const Apresentacao = () => {
           <Stack
             component={motion.div}
             variants={{
-              hidden: { opacity: 0, scale: 1.1 },
+              hidden: { opacity: 0 },
               visible: { opacity: 1, scale: 1 },
             }}
             initial={'hidden'}
@@ -71,7 +71,7 @@ export const Apresentacao = () => {
         </Stack>
         <motion.div
           variants={{
-            hidden: { opacity: 0, scale: 1.1 },
+            hidden: { opacity: 0 },
             visible: { opacity: 1, scale: 1 },
           }}
           initial={'hidden'}
