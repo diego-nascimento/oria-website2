@@ -1,20 +1,18 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { Box, Button, Grid2, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Button, Grid2, Stack, Typography } from '@mui/material';
 
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 
 export const Home = () => {
-  const theme = useTheme();
-
   return (
     <Stack
       alignItems={'center'}
       minHeight={'100vh'}
       height={'100%'}
-      bgcolor={theme.palette.secondary.main}
+      bgcolor={'secondary.main'}
       id="home"
       overflow={'hidden'}
     >
@@ -65,6 +63,7 @@ export const Home = () => {
                     fontWeight={600}
                     color="#fff"
                     letterSpacing={2}
+                    component={'span'}
                   >
                     Psicologa de Mães Gestantes
                   </Typography>
@@ -91,6 +90,7 @@ export const Home = () => {
                     letterSpacing={1}
                     fontWeight={600}
                     color="secondary.contrastText"
+                    component={'p'}
                   >
                     Após o positivo ​existe o​ <strong>desconhecido</strong>.
                     Você não precisa ​enfrentar tudo isso​{' '}
@@ -195,6 +195,7 @@ export const Home = () => {
             }}
             fontWeight={700}
             textAlign={'center'}
+            component={'span'}
           >
             Psicóloga para Mães - Psicólogas De Gestante - Psicóloga Online
           </Typography>

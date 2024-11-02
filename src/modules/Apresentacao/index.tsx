@@ -92,6 +92,7 @@ export const Apresentacao = () => {
             textAlign={'center'}
             fontFamily={'Bree Serif, serif'}
             fontWeight={400}
+            component={'h1'}
           >
             Ariane dos Santos Miranda - Psicóloga Obstétrica
           </Typography>
@@ -118,6 +119,7 @@ export const Apresentacao = () => {
             }}
             textAlign={'center'}
             fontWeight={600}
+            component={'h2'}
           >
             Registro Profissional: CRP04/67556
           </Typography>
@@ -141,6 +143,7 @@ export const Apresentacao = () => {
                 xs: 18,
                 md: 38,
               }}
+              component={'p'}
             >
               Sou <Box component={'strong'}>psicóloga</Box> com foco em{' '}
               <Box component={'strong'}>perinatalidade</Box> e ​parentalidade,
@@ -167,6 +170,7 @@ export const Apresentacao = () => {
                 xs: 18,
                 md: 38,
               }}
+              component={'p'}
             >
               Eu sei o que é precisar de{' '}
               <Box component={'strong'}>apoio e acolhimento</Box> e não ​saber
@@ -194,12 +198,14 @@ export const Apresentacao = () => {
                 xs: 18,
                 md: 38,
               }}
+              component={'p'}
             >
               Para além da graduação em psicologia, sou{' '}
               <Box component={'strong'}>Pós-​graduada</Box> em Psicologia
-              Perinatal e da Parentalidade e ​Pós-graduanda em{' '}
-              <strong>Terapias Cognitivas-​Comportamentais</strong> e
-              Pós-graduanda em <strong>Saúde Mental Perinatal</strong>.
+              Perinatal e da Parentalidade, ​Pós-graduanda em{' '}
+              <strong>Terapias Cognitivas-​Comportamentais (PUC Minas)</strong>{' '}
+              e Pós-graduanda em <strong>Saúde Mental Perinatal (CECMP)</strong>
+              .
             </Typography>
           </motion.div>
         </Stack>

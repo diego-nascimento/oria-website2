@@ -128,12 +128,7 @@ export const Header = () => {
           <Divider />
         </Box>
       </Drawer>
-      <AppBar
-        color="secondary"
-        position="sticky"
-        // sx={{ top: 0, zIndex: theme.zIndex.drawer + 1 }}
-        elevation={isTrigged ? 8 : 0}
-      >
+      <AppBar color="secondary" position="sticky" elevation={isTrigged ? 8 : 0}>
         <Toolbar>
           <Stack
             flex={1}

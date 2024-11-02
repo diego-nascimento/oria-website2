@@ -84,7 +84,7 @@ export const PIlares = () => {
             >
               <Stack width={'100%'} maxWidth={750} justifyContent={'center'}>
                 <Image
-                  src={'/image.png'}
+                  src={'/image.svg'}
                   width={1500}
                   height={1200}
                   alt="imagem"

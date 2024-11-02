@@ -118,6 +118,7 @@ export const Caminhos = () => {
                 fontFamily={'Bree Serif, serif'}
                 fontWeight={400}
                 color="secondary.main"
+                component={'h1'}
               >
                 Como posso te ajudar?
               </Typography>
