@@ -46,7 +46,6 @@ export const Caminhos = () => {
       pr={2}
       paddingX={{
         xs: 2,
-        md: 0,
       }}
       paddingTop={{
         xs: 4,
@@ -54,7 +53,7 @@ export const Caminhos = () => {
       }}
       id="tratamentos"
       ref={ref}
-      overflow={'hidden'}
+      overflow={'clip'}
     >
       <MaxWidth>
         <Grid2 container spacing={4} marginTop={2}>
@@ -62,7 +61,7 @@ export const Caminhos = () => {
             component={motion.div}
             size={{
               xs: 12,
-              lg: 6,
+              sm: 6,
             }}
             variants={{
               hidden: { opacity: 0, x: 40, filter: 'blur(1rem)' },
@@ -91,7 +90,7 @@ export const Caminhos = () => {
           <Grid2
             size={{
               xs: 12,
-              lg: 6,
+              sm: 6,
             }}
             paddingBottom={4}
             marginTop={4}

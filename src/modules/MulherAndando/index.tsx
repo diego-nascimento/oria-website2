@@ -47,7 +47,7 @@ export const MulherAndando = () => {
             borderRadius={4}
             padding={4}
             maxWidth={{
-              xs: '100%',
+              xs: '400px',
               lg: '35vw',
             }}
           >
