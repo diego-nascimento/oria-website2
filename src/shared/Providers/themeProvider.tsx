@@ -9,6 +9,9 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
     <ThemeProvider theme={theme}>
       <GlobalStyles
         styles={(theme) => ({
+          root: {
+            'color-scheme': 'light only',
+          },
           body: {
             backgroundColor: '#111',
             minHeight: '100vh',

@@ -20,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <meta name="color-scheme" content="light only" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
