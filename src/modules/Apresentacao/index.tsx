@@ -69,7 +69,8 @@ export const Apresentacao = () => {
             />
           </Stack>
         </Stack>
-        <motion.div
+        <Stack
+          component={motion.div}
           variants={{
             hidden: { opacity: 0 },
             visible: { opacity: 1, scale: 1 },
@@ -92,9 +93,9 @@ export const Apresentacao = () => {
             fontFamily={'Bree Serif, serif'}
             fontWeight={400}
           >
-            Ariane dos Santos Miranda - Psicóloga ​de Mães e gestantes
+            Ariane dos Santos Miranda - Psicóloga Obstétrica
           </Typography>
-        </motion.div>
+        </Stack>
         .
         <motion.div
           variants={{
@@ -113,7 +114,7 @@ export const Apresentacao = () => {
             color="primary"
             fontSize={{
               xs: 18,
-              md: 35,
+              md: 32,
             }}
             textAlign={'center'}
             fontWeight={600}

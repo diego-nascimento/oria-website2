@@ -33,7 +33,7 @@ export const Second = () => {
   const theme = useTheme();
 
   return (
-    <Stack id="emocoes" overflow={'hidden'}>
+    <Stack id="emocoes">
       <MaxWidth>
         <Stack paddingX={2} paddingY={4} gap={4} ref={ref}>
           <Stack

@@ -15,7 +15,6 @@ import {
   ListItemText,
   Stack,
   Toolbar,
-  Typography,
   useMediaQuery,
   useScrollTrigger,
   useTheme,
@@ -23,6 +22,7 @@ import {
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 const items = [
   {
@@ -164,19 +164,12 @@ export const Header = () => {
                     animate={mainControls}
                     transition={{ duration: 1, delay: 0.25, ease: 'easeInOut' }}
                   >
-                    <Button>
-                      <Typography
-                        fontFamily={'Bree Serif, serif'}
-                        fontWeight={400}
-                        fontSize={{
-                          xs: 24,
-                          md: 32,
-                        }}
-                        color="secondary.contrastText"
-                      >
-                        Ariane Miranda
-                      </Typography>
-                    </Button>
+                    <Image
+                      src={'/logo.png'}
+                      width={130}
+                      height={30}
+                      alt="Ariane Miranda Logo"
+                    />
                   </motion.div>
                 </Link>
 
