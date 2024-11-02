@@ -27,6 +27,7 @@ export const MulherAndando = () => {
       paddingX={2}
       bgcolor={'#aaa'}
       overflow={'clip'}
+      height={{ xs: 600, md: 800 }}
     >
       <MaxWidth>
         <Stack alignItems={'flex-end'} zIndex={20} justifyContent={'center'}>
