@@ -112,7 +112,7 @@ export const Home = () => {
                 >
                   <Box
                     component={Link}
-                    href="https://wa.me/message/5MAMLEFBR547D1"
+                    href="https://wa.me/message/WFTAHMJVVAHKI1"
                     target="_blank"
                   >
                     <Button variant="contained" color="primary" size="large">
