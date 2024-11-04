@@ -21,7 +21,7 @@ const problemas = [
 
 export const Second = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export const Second = () => {
             alignItems={'center'}
           >
             <Box position={'absolute'} maxWidth={'300px'}>
-              <img src="/baby.svg" />
+              <img src="/bebe.png" />
             </Box>
             <Box width={'100%'} maxWidth={'330px'}>
               <AssetImage />

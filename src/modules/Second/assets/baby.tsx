@@ -2,7 +2,7 @@ export const Baby = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill="#001f3f"
+      fill="#ffffff"
       height="247.1"
       preserveAspectRatio="xMidYMid meet"
       version="1"

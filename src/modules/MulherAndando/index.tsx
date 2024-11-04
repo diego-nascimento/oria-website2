@@ -67,14 +67,19 @@ export const MulherAndando = () => {
           </Stack>
         </MaxWidth>
         <Stack
+          width={{
+            xs: '200vw',
+            md: '100vw',
+          }}
+          right={{
+            xs: -250,
+            md: 0,
+          }}
           sx={{
-            width: '130vw',
+            height: '1200px',
             objectFit: 'cover',
             position: 'absolute',
-            left: '0',
-            right: '0',
-            top: '40',
-            bottom: '0',
+
             zIndex: '-1',
           }}
         >

@@ -25,7 +25,7 @@ const AccordionSummary = styled(MuiAccordionSummary)({
 export const Caminhos = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -55,7 +55,14 @@ export const Caminhos = () => {
       ref={ref}
     >
       <MaxWidth>
-        <Grid2 container spacing={4} marginTop={2}>
+        <Grid2
+          container
+          spacing={4}
+          marginTop={2}
+          sx={{
+            overflowX: 'hidden',
+          }}
+        >
           <Grid2
             component={motion.div}
             size={{

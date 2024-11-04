@@ -1,21 +1,23 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { Box, Button, Grid2, Stack, Typography } from '@mui/material';
+import {
+  Button,
+  Grid2,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 
 export const Home = () => {
+  const theme = useTheme();
+  const mediaquery = useMediaQuery(theme.breakpoints.up('sm'));
   return (
-    <Stack
-      alignItems={'center'}
-      minHeight={'100vh'}
-      height={'100%'}
-      bgcolor={'secondary.main'}
-      id="home"
-      overflow={'hidden'}
-    >
+    <Stack alignItems={'center'} bgcolor={'secondary.main'} id="home">
       <MaxWidth>
         <Stack
           width={'100%'}
@@ -59,7 +61,10 @@ export const Home = () => {
                   <Typography
                     variant="h1"
                     textTransform={'uppercase'}
-                    fontSize={'16px'}
+                    fontSize={{
+                      xs: 14,
+                      md: 16,
+                    }}
                     fontWeight={600}
                     color="#fff"
                     letterSpacing={2}
@@ -84,7 +89,7 @@ export const Home = () => {
                   <Typography
                     variant="h1"
                     fontSize={{
-                      xs: 36,
+                      xs: 28,
                       md: 50,
                     }}
                     letterSpacing={1}
@@ -110,15 +115,23 @@ export const Home = () => {
                     ease: 'easeOut',
                   }}
                 >
-                  <Box
+                  <Stack
                     component={Link}
                     href="https://wa.me/message/WFTAHMJVVAHKI1"
                     target="_blank"
+                    alignItems={{
+                      xs: 'center',
+                      md: 'flex-start',
+                    }}
                   >
-                    <Button variant="contained" color="primary" size="large">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size={mediaquery ? 'large' : 'medium'}
+                    >
                       FALE COMIGO AGORA
                     </Button>
-                  </Box>
+                  </Stack>
                 </motion.div>
               </Stack>
             </Grid2>
@@ -147,7 +160,7 @@ export const Home = () => {
               }}
               sx={{
                 backgroundImage: 'url(/ariane.png)',
-                backgroundPosition: 'center',
+                backgroundPosition: 'top',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
               }}
@@ -158,9 +171,6 @@ export const Home = () => {
       <Stack
         width={'100%'}
         height={'100%'}
-        minHeight={{
-          xs: '15vh',
-        }}
         justifyContent={'center'}
         alignItems={'center'}
         bgcolor={'#001F3F'}
@@ -168,6 +178,10 @@ export const Home = () => {
           md: 0,
         }}
         paddingX={2}
+        paddingY={{
+          xs: 4,
+          md: 8,
+        }}
         sx={{
           boxShadow: 'rgba(0, 0, 0, 0.25) 0px -70px 55px',
           zIndex: 10,
@@ -190,12 +204,11 @@ export const Home = () => {
             variant="h3"
             color="#fff"
             fontSize={{
-              xs: 22,
+              xs: 15,
               md: 42,
             }}
             fontWeight={700}
             textAlign={'center'}
-            component={'span'}
           >
             Psicóloga para Mães - Psicólogas De Gestante - Psicóloga Online
           </Typography>

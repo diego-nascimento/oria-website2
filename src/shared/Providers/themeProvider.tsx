@@ -15,6 +15,7 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
           body: {
             backgroundColor: '#111',
             minHeight: '100vh',
+            overflowX: 'hidden',
           },
           strong: {
             color: theme.palette.primary.main,

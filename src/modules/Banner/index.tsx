@@ -7,7 +7,7 @@ import { motion, useAnimation, useInView } from 'framer-motion';
 
 export const Banner = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 1 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const mainControls = useAnimation();
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export const Banner = () => {
               md: 2,
             }}
           >
-            <Grid2 size={{ xs: 14, md: 4 }}>
+            <Grid2 size={{ xs: 12, md: 4 }}>
               <Stack
                 justifyContent={'center'}
                 component={motion.div}
@@ -88,7 +88,7 @@ export const Banner = () => {
               </Stack>
             </Grid2>
             <Grid2
-              size={{ xs: 14, md: 4 }}
+              size={{ xs: 12, md: 4 }}
               component={motion.div}
               variants={{
                 hidden: { opacity: 0, y: 40 },
@@ -116,7 +116,7 @@ export const Banner = () => {
               </Typography>
             </Grid2>
             <Grid2
-              size={{ xs: 14, md: 4 }}
+              size={{ xs: 12, md: 4 }}
               component={motion.div}
               variants={{
                 hidden: { opacity: 0, x: 40 },
@@ -186,7 +186,7 @@ export const Banner = () => {
           <Stack
             justifyContent={'center'}
             alignItems={'center'}
-            height={'400px'}
+            height={'300px'}
             paddingX={4}
           >
             <Typography
@@ -221,7 +221,7 @@ export const Banner = () => {
           <Stack
             justifyContent={'center'}
             alignItems={'center'}
-            height={'400px'}
+            height={'300px'}
             paddingX={4}
           >
             <Typography
@@ -241,7 +241,7 @@ export const Banner = () => {
           <Stack
             justifyContent={'center'}
             alignItems={'center'}
-            height={'400px'}
+            height={'300px'}
             paddingX={4}
           >
             <Typography
