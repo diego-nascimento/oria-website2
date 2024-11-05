@@ -20,6 +20,19 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-K2Q6Z3WDLV"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2Q6Z3WDLV');`,
+          }}
+        />
         <meta name="color-scheme" content="light only" />
         <link
           rel="apple-touch-icon"
