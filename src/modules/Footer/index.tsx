@@ -1,6 +1,6 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { Email, Public, Room, WhatsApp } from '@mui/icons-material';
+import { Email, Instagram, Public, Room, WhatsApp } from '@mui/icons-material';
 import {
   Avatar,
   Box,
@@ -9,6 +9,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import Link from 'next/link';
 
 export const Footer = () => {
   const theme = useTheme();
@@ -83,15 +84,37 @@ export const Footer = () => {
               >
                 Fale comigo
               </Typography>
-              <Stack gap={0.3}>
-                <Stack direction={'row'} gap={2}>
-                  <WhatsApp
-                    sx={{
-                      color: '#001f3f',
-                    }}
-                  />
-                  <Typography color={'#001f3f'}>+55 32 9 9965-8169</Typography>
-                </Stack>
+              <Stack gap={1}>
+                <Link
+                  href={'https://wa.me/message/WFTAHMJVVAHKI1'}
+                  target="_blank"
+                >
+                  <Stack direction={'row'} gap={2}>
+                    <WhatsApp
+                      sx={{
+                        color: '#001f3f',
+                      }}
+                    />
+                    <Typography color={'#001f3f'}>
+                      +55 32 9 9965-8169
+                    </Typography>
+                  </Stack>
+                </Link>
+
+                <Link
+                  href={'https://www.instagram.com/arianemirandapsi/'}
+                  target="_blank"
+                >
+                  <Stack direction={'row'} gap={2}>
+                    <Instagram
+                      sx={{
+                        color: '#001f3f',
+                      }}
+                    />
+                    <Typography color={'#001f3f'}>@arianemirandapsi</Typography>
+                  </Stack>
+                </Link>
+
                 <Stack direction={'row'} gap={2}>
                   <Email
                     sx={{
