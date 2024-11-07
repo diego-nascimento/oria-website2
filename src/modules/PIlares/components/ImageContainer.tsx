@@ -1,11 +1,8 @@
-'use client';
 import { Stack } from '@mui/material';
-import { motion } from 'framer-motion';
-
 import { PropsWithChildren } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-export const TitleContainer = ({ children }: PropsWithChildren) => {
+export const ImageContainer = ({ children }: PropsWithChildren) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -13,8 +10,13 @@ export const TitleContainer = ({ children }: PropsWithChildren) => {
   return (
     <Stack
       ref={ref}
-      component={motion.div}
-      className={inView ? 'animate-text' : 'awaiting-animate-text'}
+      alignItems={'center'}
+      className={'awaitingAnimateLeft awaitAnimateBlur'}
+      sx={{
+        animation: inView
+          ? 'animateLeft 1s forwards, animateBlur 1s forwards'
+          : '',
+      }}
     >
       {children}
     </Stack>

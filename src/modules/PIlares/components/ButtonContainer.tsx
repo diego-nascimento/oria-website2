@@ -1,21 +1,22 @@
 'use client';
-import { Grid2 } from '@mui/material';
 
 import { PropsWithChildren } from 'react';
+import { Stack } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
-export const RightContainer = ({ children }: PropsWithChildren) => {
+export const ButtonContainer = ({ children }: PropsWithChildren) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
   return (
-    <Grid2
-      size={{ xs: 12, md: 4 }}
-      className={inView ? 'animateRight' : 'awaitingAnimateRight'}
+    <Stack
+      className={inView ? 'animateLeft' : 'waitingAnimateLeft'}
       ref={ref}
+      alignItems={'center'}
+      marginTop={4}
     >
       {children}
-    </Grid2>
+    </Stack>
   );
 };

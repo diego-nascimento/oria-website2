@@ -1,28 +1,29 @@
 'use client';
 import { Stack } from '@mui/material';
-import { useMainControlSecond } from '../store/useMainControlSecond';
-import { motion } from 'framer-motion';
-import { PropsWithChildren } from 'react';
 
-export const ImageContainer = ({ children }: PropsWithChildren) => {
-  const { mainControls } = useMainControlSecond();
+import { PropsWithChildren } from 'react';
+import { useInView } from 'react-intersection-observer';
+
+interface Props {
+  delay?: number;
+}
+
+export const ImageContainer = ({
+  children,
+  delay,
+}: PropsWithChildren<Props>) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
     <Stack
-      component={motion.div}
-      variants={{
-        hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
-        visible: { opacity: 1, y: 0, scale: 1, filter: 'blur(0rem)' },
-      }}
-      initial={'hidden'}
-      animate={mainControls}
-      transition={{
-        duration: 1,
-        delay: 0.1,
-        ease: 'easeIn',
-      }}
+      className={inView ? 'animate-text' : 'awaiting-animate-text'}
       position={'relative'}
       justifyContent={'center'}
       alignItems={'center'}
+      ref={ref}
+      sx={{ animationDelay: `${delay}s` }}
     >
       {children}
     </Stack>

@@ -1,19 +1,20 @@
 'use client';
+import { Stack } from '@mui/material';
+import { motion } from 'framer-motion';
 
 import { PropsWithChildren } from 'react';
-import { Stack } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 
-export const ButtonContainer = ({ children }: PropsWithChildren) => {
+export const PhraseContainer = ({ children }: PropsWithChildren) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
   return (
     <Stack
-      alignItems={'center'}
-      className={inView ? 'animateLeft' : 'waitingAnimateLeft'}
       ref={ref}
+      component={motion.div}
+      className={inView ? 'animate-text' : 'awaiting-animate-text'}
     >
       {children}
     </Stack>

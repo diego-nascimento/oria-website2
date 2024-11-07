@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { Wrapper } from './components/Wrapper';
 import { VideoWrapper } from './components/VideoWrapper';
 import { Iframe } from './components/IFrame';
-import { TitleContainer } from './components/TitleContainer';
-import { SubTitleContainer } from './components/SubTitleContianer';
+
 import { TextContainer } from './components/TextContainer';
 import { ButtonContainer } from './components/ButtonContainer';
 
@@ -19,7 +18,7 @@ export const Apresentacao = () => {
             <Iframe />
           </VideoWrapper>
         </Stack>
-        <TitleContainer>
+        <TextContainer>
           <Typography
             marginTop={4}
             fontSize={{
@@ -33,8 +32,8 @@ export const Apresentacao = () => {
           >
             Ariane dos Santos Miranda - Psicóloga Obstétrica
           </Typography>
-        </TitleContainer>
-        <SubTitleContainer>
+        </TextContainer>
+        <TextContainer>
           <Typography
             color="primary"
             fontSize={{
@@ -47,9 +46,9 @@ export const Apresentacao = () => {
           >
             Registro Profissional: CRP04/67556
           </Typography>
-        </SubTitleContainer>
+        </TextContainer>
         <Stack marginTop={4} gap={4}>
-          <TextContainer delay={0.4}>
+          <TextContainer>
             <Typography
               fontSize={{
                 xs: 18,
@@ -64,7 +63,7 @@ export const Apresentacao = () => {
               ​questões com a criação dos filhos.
             </Typography>
           </TextContainer>
-          <TextContainer delay={0.5}>
+          <TextContainer>
             <Typography
               fontSize={{
                 xs: 18,
@@ -80,7 +79,7 @@ export const Apresentacao = () => {
               <strong>ajudar você</strong>.
             </Typography>
           </TextContainer>
-          <TextContainer delay={0.6}>
+          <TextContainer>
             <Typography
               fontSize={{
                 xs: 18,

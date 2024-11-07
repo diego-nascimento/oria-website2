@@ -1,25 +1,17 @@
 'use client';
-import { motion } from 'framer-motion';
-import { useMainControlApresentacao } from '../store/useMainControlApresentacao';
+
 import { PropsWithChildren } from 'react';
+import { Stack } from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 export const ButtonContainer = ({ children }: PropsWithChildren) => {
-  const { mainControls } = useMainControlApresentacao();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, x: -100, scale: 0.99 },
-        visible: { opacity: 1, x: 0, scale: 1 },
-      }}
-      initial={'hidden'}
-      animate={mainControls}
-      transition={{
-        duration: 0.75,
-        delay: 0.7,
-        ease: 'easeOut',
-      }}
-    >
+    <Stack className={inView ? 'animateLeft' : 'waitingAnimateLeft'} ref={ref}>
       {children}
-    </motion.div>
+    </Stack>
   );
 };

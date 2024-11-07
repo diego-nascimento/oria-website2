@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Wrapper } from './components/Wrapper';
 import { TitleContainer } from './components/TitleContainer';
 import { Card } from './components/Card';
+import { ButtonContainer } from './components/ButtonContainer';
 
 const avaliacoes = [
   {
@@ -95,13 +96,7 @@ export const Avaliacoes = () => {
               );
             })}
           </Stack>
-          <Stack
-            alignItems={'center'}
-            marginTop={{
-              xs: 4,
-              md: 8,
-            }}
-          >
+          <ButtonContainer>
             <Box
               component={Link}
               href="https://wa.me/message/WFTAHMJVVAHKI1"
@@ -109,7 +104,7 @@ export const Avaliacoes = () => {
             >
               <Button variant="contained">Começar agora</Button>
             </Box>
-          </Stack>
+          </ButtonContainer>
         </MaxWidth>
       </Stack>
     </Wrapper>

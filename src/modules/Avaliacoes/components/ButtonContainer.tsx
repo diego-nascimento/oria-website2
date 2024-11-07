@@ -11,9 +11,13 @@ export const ButtonContainer = ({ children }: PropsWithChildren) => {
   });
   return (
     <Stack
-      alignItems={'center'}
       className={inView ? 'animateLeft' : 'waitingAnimateLeft'}
       ref={ref}
+      alignItems={'center'}
+      marginTop={{
+        xs: 4,
+        md: 8,
+      }}
     >
       {children}
     </Stack>

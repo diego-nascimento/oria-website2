@@ -1,27 +1,8 @@
-'use client';
-
 import { Stack } from '@mui/material';
-import { useAnimation, useInView } from 'framer-motion';
-import { PropsWithChildren, useEffect, useRef } from 'react';
 
-import { useMainControlBanner } from '../../store/useMainControlBanner';
+import { PropsWithChildren } from 'react';
 
 export const Wrapper = ({ children }: PropsWithChildren) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-  const { intiate } = useMainControlBanner();
-  useEffect(() => {
-    intiate(mainControls);
-  }, [mainControls, intiate]);
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
-    }
-  }, [isInView, mainControls]);
-
   return (
     <Stack
       paddingY={{
@@ -36,7 +17,6 @@ export const Wrapper = ({ children }: PropsWithChildren) => {
         xs: 'none',
         lg: 'flex',
       }}
-      ref={ref}
     >
       {children}
     </Stack>

@@ -38,7 +38,7 @@ export const Home = () => {
               alignItems={'center'}
             >
               <Stack height={'100%'} justifyContent={'center'} gap={4}>
-                <TextContainer>
+                <TextContainer delay={0}>
                   <Typography
                     variant="h1"
                     textTransform={'uppercase'}
@@ -55,7 +55,7 @@ export const Home = () => {
                   </Typography>
                 </TextContainer>
 
-                <TextContainer>
+                <TextContainer delay={0.2}>
                   <Typography
                     variant="h1"
                     fontSize={{

@@ -15,6 +15,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { ImageContainer } from './components/ImageContainer';
+import { TextContainer } from './components/TextContainer';
+import { PhraseContainer } from './components/PhraseContainer';
+import { ButtonContainer } from './components/ButtonContainer';
 
 export const PIlares = () => {
   const theme = useTheme();
@@ -67,21 +71,7 @@ export const PIlares = () => {
               lg: 6,
             }}
           >
-            <Stack
-              alignItems={'center'}
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, x: -70, filter: 'blur(1rem)' },
-                visible: { opacity: 1, x: 0, filter: 'blur(0rem)' },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.3,
-                ease: 'easeOut',
-              }}
-            >
+            <ImageContainer>
               <Stack width={'100%'} maxWidth={750} justifyContent={'center'}>
                 <Image
                   src={'/image.svg'}
@@ -90,7 +80,7 @@ export const PIlares = () => {
                   alt="imagem"
                 />
               </Stack>
-            </Stack>
+            </ImageContainer>
           </Grid2>
           <Grid2
             size={{
@@ -147,30 +137,7 @@ export const PIlares = () => {
                       vivenciando.
                     </Typography>
                   </Stack>
-                  <Stack
-                    ref={ref}
-                    component={motion.div}
-                    variants={{
-                      hidden: { opacity: 0, x: 70 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    transition={{
-                      duration: 1,
-                      delay: 0.5,
-                      ease: 'easeOut',
-                    }}
-                    direction={{
-                      xs: 'column',
-                      md: 'row',
-                    }}
-                    alignItems={{
-                      xs: 'center',
-                      md: 'initial',
-                    }}
-                    gap={2}
-                  >
+                  <TextContainer delay={0.5}>
                     <Box marginTop={1}>
                       <Avatar
                         sx={{ backgroundColor: theme.palette.secondary.main }}
@@ -196,31 +163,8 @@ export const PIlares = () => {
                       </Box>{' '}
                       o que te incomoda.
                     </Typography>
-                  </Stack>
-                  <Stack
-                    ref={ref}
-                    component={motion.div}
-                    variants={{
-                      hidden: { opacity: 0, x: 70 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    transition={{
-                      duration: 1,
-                      delay: 0.7,
-                      ease: 'easeOut',
-                    }}
-                    direction={{
-                      xs: 'column',
-                      md: 'row',
-                    }}
-                    alignItems={{
-                      xs: 'center',
-                      md: 'initial',
-                    }}
-                    gap={2}
-                  >
+                  </TextContainer>
+                  <TextContainer delay={0.6}>
                     <Box marginTop={1}>
                       <Avatar
                         sx={{ backgroundColor: theme.palette.secondary.main }}
@@ -246,31 +190,8 @@ export const PIlares = () => {
                       trabalhamos com técnicas ​eficazes da TCC (Terapias
                       Cognitivo ​Comportamentais).
                     </Typography>
-                  </Stack>
-                  <Stack
-                    ref={ref}
-                    component={motion.div}
-                    variants={{
-                      hidden: { opacity: 0, x: 70 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    transition={{
-                      duration: 1,
-                      delay: 0.9,
-                      ease: 'easeOut',
-                    }}
-                    direction={{
-                      xs: 'column',
-                      md: 'row',
-                    }}
-                    alignItems={{
-                      xs: 'center',
-                      md: 'initial',
-                    }}
-                    gap={2}
-                  >
+                  </TextContainer>
+                  <TextContainer delay={0.7}>
                     <Box marginTop={1}>
                       <Avatar
                         sx={{ backgroundColor: theme.palette.secondary.main }}
@@ -300,28 +221,13 @@ export const PIlares = () => {
                       </Box>{' '}
                       construídas ​em terapia.
                     </Typography>
-                  </Stack>
+                  </TextContainer>
                 </Stack>
               </Stack>
             </Stack>
           </Grid2>
         </Grid2>
-        <Stack
-          overflow={'hidden'}
-          ref={ref}
-          component={motion.div}
-          variants={{
-            hidden: { opacity: 0, y: 40 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial={'hidden'}
-          animate={mainControls}
-          transition={{
-            duration: 1,
-            delay: 0.8,
-            ease: 'easeOut',
-          }}
-        >
+        <PhraseContainer>
           <Typography
             fontSize={{
               xs: 18,
@@ -337,25 +243,9 @@ export const PIlares = () => {
             <strong>vida</strong>. E eu ​posso te auxiliar nisso através de uma​{' '}
             <strong>abordagem validada cientificamente</strong>.
           </Typography>
-        </Stack>
+        </PhraseContainer>
 
-        <Stack
-          overflow={'hidden'}
-          alignItems={'center'}
-          marginTop={4}
-          component={motion.div}
-          variants={{
-            hidden: { opacity: 0, x: -100 },
-            visible: { opacity: 1, x: 0 },
-          }}
-          initial={'hidden'}
-          animate={mainControls}
-          transition={{
-            duration: 0.5,
-            delay: 1,
-            ease: 'easeOut',
-          }}
-        >
+        <ButtonContainer>
           <Box
             component={Link}
             href="https://wa.me/message/WFTAHMJVVAHKI1"
@@ -365,7 +255,7 @@ export const PIlares = () => {
               Fale comigo
             </Button>
           </Box>
-        </Stack>
+        </ButtonContainer>
       </MaxWidth>
     </Stack>
   );

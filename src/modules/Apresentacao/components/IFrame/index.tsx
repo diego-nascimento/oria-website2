@@ -1,22 +1,16 @@
 'use client';
-import { motion } from 'framer-motion';
-import { useMainControlApresentacao } from '../../store/useMainControlApresentacao';
+
+import { useInView } from 'react-intersection-observer';
 
 export const Iframe = () => {
-  const { mainControls } = useMainControlApresentacao();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
-    <motion.iframe
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1 },
-      }}
-      initial={'hidden'}
-      animate={mainControls}
-      transition={{
-        duration: 1,
-        delay: 0.25,
-        ease: 'easeIn',
-      }}
+    <iframe
+      ref={ref}
+      className={inView ? 'awaitAnimateOpacity' : 'animateOpacity'}
       style={{
         aspectRatio: '16/9',
       }}

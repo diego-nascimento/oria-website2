@@ -1,30 +1,22 @@
 'use client';
 import { Stack } from '@mui/material';
-import { motion } from 'framer-motion';
-import { PropsWithChildren } from 'react';
 
-import { useMainControlPerguntas } from '../store/useMainControlPerguntas';
+import { PropsWithChildren } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 export const TitleContainer = ({ children }: PropsWithChildren) => {
-  const { mainControls } = useMainControlPerguntas();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
   return (
     <Stack
+      className={inView ? 'animate-text' : 'awaiting-animate-text'}
+      ref={ref}
       marginBottom={2}
       alignItems={'center'}
       justifyContent={'center'}
       height={'100%'}
-      component={motion.div}
-      variants={{
-        hidden: { opacity: 0, scale: 1.1 },
-        visible: { opacity: 1, scale: 1 },
-      }}
-      initial={'hidden'}
-      animate={mainControls}
-      transition={{
-        duration: 1,
-        delay: 0,
-        ease: 'easeIn',
-      }}
     >
       {children}
     </Stack>

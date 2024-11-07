@@ -1,27 +1,17 @@
 'use client';
 import { Stack } from '@mui/material';
-import { motion } from 'framer-motion';
+
 import { PropsWithChildren } from 'react';
-import { useMainControlBanner } from '../store/useMainControlBanner';
+
+import { useInView } from 'react-intersection-observer';
 
 export const LeftContainer = ({ children }: PropsWithChildren) => {
-  const { mainControls } = useMainControlBanner();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
-    <Stack
-      justifyContent={'center'}
-      component={motion.div}
-      variants={{
-        hidden: { opacity: 0, x: -40 },
-        visible: { opacity: 1, x: 0 },
-      }}
-      initial={'hidden'}
-      animate={mainControls}
-      transition={{
-        duration: 0.5,
-        delay: 0,
-        ease: 'easeIn',
-      }}
-    >
+    <Stack className={inView ? 'animateLeft' : 'awaitAnimateLeft'} ref={ref}>
       {children}
     </Stack>
   );

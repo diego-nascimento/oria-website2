@@ -1,23 +1,17 @@
 'use client';
 import { PropsWithChildren } from 'react';
-import { motion } from 'framer-motion';
+
+import { Stack } from '@mui/material';
+import { useInView } from 'react-intersection-observer';
 
 export const BannerContainer = ({ children }: PropsWithChildren) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, scale: 0.9 },
-        visible: { opacity: 1, y: 0, scale: 1 },
-      }}
-      initial={'hidden'}
-      animate={'visible'}
-      transition={{
-        duration: 0.5,
-        delay: 1,
-        ease: 'easeOut',
-      }}
-    >
+    <Stack ref={ref} className={inView ? 'animate-text' : ''}>
       {children}
-    </motion.div>
+    </Stack>
   );
 };

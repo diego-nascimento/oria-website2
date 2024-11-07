@@ -1,6 +1,4 @@
-'use client';
 import { Stack } from '@mui/material';
-
 import { PropsWithChildren } from 'react';
 import { useInView } from 'react-intersection-observer';
 
@@ -18,9 +16,23 @@ export const TextContainer = ({
   });
   return (
     <Stack
-      className={inView ? 'animate-text' : 'awaiting-animate-text'}
       ref={ref}
-      sx={{ animationDelay: `${delay}s` }}
+      className={'awaitAnimateBlur awaitAnimateRight'}
+      sx={{
+        animationDelay: `${delay}s`,
+        animation: inView
+          ? 'animateRight 1s forwards, animateBlur 1s forwards '
+          : '',
+      }}
+      gap={2}
+      alignItems={{
+        xs: 'center',
+        md: 'initial',
+      }}
+      direction={{
+        xs: 'column',
+        md: 'row',
+      }}
     >
       {children}
     </Stack>
