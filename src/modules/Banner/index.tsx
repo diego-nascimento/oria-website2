@@ -1,38 +1,18 @@
 'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Grid2, Stack, Typography } from '@mui/material';
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Carousel from 'react-material-ui-carousel';
-import { motion, useAnimation, useInView } from 'framer-motion';
+
+import { Wrapper } from './components/Wrapper';
+import { LeftContainer } from './components/LeftContainer';
+import { CenterContainer } from './components/CenterContainer';
+import { RightContainer } from './components/RightContainer';
 
 export const Banner = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-    }
-  }, [isInView, mainControls]);
-
   return (
     <React.Fragment>
-      <Stack
-        paddingY={{
-          xs: 4,
-          md: 14,
-        }}
-        paddingX={{
-          xs: 2,
-        }}
-        bgcolor={'secondary.main'}
-        display={{
-          xs: 'none',
-          lg: 'flex',
-        }}
-        ref={ref}
-      >
+      <Wrapper>
         <MaxWidth>
           <Grid2
             container
@@ -42,21 +22,7 @@ export const Banner = () => {
             }}
           >
             <Grid2 size={{ xs: 12, md: 4 }}>
-              <Stack
-                justifyContent={'center'}
-                component={motion.div}
-                variants={{
-                  hidden: { opacity: 0, x: -40 },
-                  visible: { opacity: 1, x: 0 },
-                }}
-                initial={'hidden'}
-                animate={mainControls}
-                transition={{
-                  duration: 0.5,
-                  delay: 0,
-                  ease: 'easeIn',
-                }}
-              >
+              <LeftContainer>
                 <Typography
                   fontSize={{
                     xs: 28,
@@ -85,23 +51,9 @@ export const Banner = () => {
                 >
                   vivendo psicologia
                 </Typography>
-              </Stack>
+              </LeftContainer>
             </Grid2>
-            <Grid2
-              size={{ xs: 12, md: 4 }}
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 0.5,
-                delay: 0,
-                ease: 'easeIn',
-              }}
-            >
+            <CenterContainer>
               <Typography
                 fontSize={{
                   xs: 28,
@@ -114,22 +66,8 @@ export const Banner = () => {
                 Terapeuta Destaque ​Profissional e Empresarial em ​2024 - Prime
                 Pesquisas
               </Typography>
-            </Grid2>
-            <Grid2
-              size={{ xs: 12, md: 4 }}
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, x: 40 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 0.5,
-                delay: 0,
-                ease: 'easeIn',
-              }}
-            >
+            </CenterContainer>
+            <RightContainer>
               <Typography
                 fontSize={{
                   xs: 28,
@@ -162,10 +100,10 @@ export const Banner = () => {
               >
                 Em saúde mental materna e ​perinatalidade
               </Typography>
-            </Grid2>
+            </RightContainer>
           </Grid2>
         </MaxWidth>
-      </Stack>
+      </Wrapper>
 
       <Stack
         bgcolor={'secondary.main'}

@@ -1,11 +1,7 @@
-'use client';
-
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { Box, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
 export const MulherAndando = () => {
-  const theme = useTheme();
-
   return (
     <Stack>
       <Stack
@@ -28,7 +24,7 @@ export const MulherAndando = () => {
             <Stack justifyContent={'center'}>
               <Stack alignItems={'flex-end'}>
                 <Stack
-                  bgcolor={theme.palette.background.paper}
+                  bgcolor={'background.paper'}
                   borderRadius={4}
                   padding={4}
                   maxWidth={{

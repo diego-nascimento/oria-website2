@@ -1,18 +1,10 @@
-'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Email, Instagram, Public, Room, WhatsApp } from '@mui/icons-material';
-import {
-  Avatar,
-  Box,
-  Divider,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Box, Divider, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
+import { Avatar } from './component/Avatar';
 
 export const Footer = () => {
-  const theme = useTheme();
   return (
     <Stack py={4} px={2}>
       <Divider />
@@ -28,21 +20,7 @@ export const Footer = () => {
         >
           <Stack>
             <Stack direction={'row'} gap={2}>
-              <Avatar
-                sx={{
-                  width: '170px',
-                  height: '170px',
-                  display: 'flex',
-
-                  [theme.breakpoints.down('md')]: {
-                    width: 130,
-                    height: 130,
-                  },
-                }}
-                src="oria2.jpg"
-              >
-                AM
-              </Avatar>
+              <Avatar src="oria2.jpg">AM</Avatar>
               <Stack justifyContent={'center'}>
                 <Typography
                   fontSize={26}

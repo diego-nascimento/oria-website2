@@ -1,59 +1,16 @@
-'use client';
+import { Grid2, Stack, Typography } from '@mui/material';
 
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary as MuiAccordionSummary,
-  Grid2,
-  Stack,
-  styled,
-  Typography,
-  useTheme,
-} from '@mui/material';
-
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { useEffect, useRef, useState } from 'react';
-import { theme } from '@/style/theme';
-import { motion, useAnimation, useInView } from 'framer-motion';
 
-const AccordionSummary = styled(MuiAccordionSummary)({
-  fontWeight: 700,
-  color: theme.palette.secondary.main,
-});
+import { Wrapper } from './components/Wrapper';
+import { OriaImageContainer } from './components/OriaImageContainer';
+import { TitleContainer } from './components/TitleContainer';
+import { AccordionContainer } from './components/AccordionContainer';
+import { Accordion } from './components/Accordion';
 
 export const Caminhos = () => {
-  const [expanded, setExpanded] = useState<string | false>(false);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-    }
-  }, [isInView, mainControls]);
-
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
-      setExpanded(isExpanded ? panel : false);
-    };
-
-  const theme = useTheme();
-
   return (
-    <Stack
-      pr={2}
-      paddingX={{
-        xs: 2,
-      }}
-      paddingTop={{
-        xs: 4,
-        md: 0,
-      }}
-      id="tratamentos"
-      ref={ref}
-    >
+    <Wrapper>
       <MaxWidth>
         <Grid2
           container
@@ -63,36 +20,22 @@ export const Caminhos = () => {
             overflowX: 'hidden',
           }}
         >
-          <Grid2
-            component={motion.div}
-            size={{
-              xs: 12,
-              sm: 6,
-            }}
-            variants={{
-              hidden: { opacity: 0, x: 40, filter: 'blur(1rem)' },
-              visible: { opacity: 1, x: 0, filter: 'blur(0rem)' },
-            }}
-            initial={'hidden'}
-            animate={mainControls}
-            transition={{
-              duration: 1,
-              delay: 0,
-              ease: 'easeIn',
-            }}
-            sx={{
-              minHeight: 500,
-              backgroundImage: 'url(/ariane2.png)',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'cover',
-              borderRadius: 80,
-
-              [theme.breakpoints.up('md')]: {
-                minHeight: 700,
-              },
-            }}
-          ></Grid2>
+          <OriaImageContainer>
+            <Stack
+              width={'100%'}
+              minHeight={{
+                xs: 500,
+                md: 700,
+              }}
+              sx={{
+                backgroundImage: 'url(/ariane2.png)',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover',
+                borderRadius: 80,
+              }}
+            />
+          </OriaImageContainer>
           <Grid2
             size={{
               xs: 12,
@@ -101,19 +44,7 @@ export const Caminhos = () => {
             paddingBottom={4}
             marginTop={4}
           >
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.2,
-                ease: 'easeIn',
-              }}
-            >
+            <TitleContainer>
               <Typography
                 textTransform={'uppercase'}
                 textAlign={'center'}
@@ -128,52 +59,17 @@ export const Caminhos = () => {
               >
                 Como posso te ajudar?
               </Typography>
-            </motion.div>
-
-            <Accordion
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0,
-                ease: 'easeIn',
-              }}
-              sx={{
-                '&:hover': {
-                  transition: 'background .5s',
-                },
-                marginTop: 4,
-              }}
-              expanded={expanded === 'panel1'}
-              onChange={handleChange('panel1')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-              >
-                <Stack paddingY={2}>Gestantes</Stack>
-              </AccordionSummary>
-
-              <AccordionDetails>
+            </TitleContainer>
+            <AccordionContainer delay={0}>
+              <Accordion panel="panel1" summary="Gestantes">
                 <Stack
                   component={'iframe'}
+                  height={{
+                    xs: 210,
+                    lg: 500,
+                  }}
                   sx={{
                     width: '100%',
-                    height: 350,
-
-                    [theme.breakpoints.down('lg')]: {
-                      height: 500,
-                    },
-
-                    [theme.breakpoints.down('sm')]: {
-                      height: 210,
-                    },
                   }}
                   src="https://www.youtube.com/embed/FHHoA_qUl8U?si=d_WptaeCh84reGbs"
                   title="YouTube video player"
@@ -182,50 +78,18 @@ export const Caminhos = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.1,
-                ease: 'easeIn',
-              }}
-              sx={{
-                '&:hover': {
-                  transition: 'background .5s',
-                },
-              }}
-              expanded={expanded === 'panel2'}
-              onChange={handleChange('panel2')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-              >
-                <Stack paddingY={2}>Luto gestacional/perinatal</Stack>
-              </AccordionSummary>
-              <AccordionDetails>
+              </Accordion>
+            </AccordionContainer>
+            <AccordionContainer delay={0.1}>
+              <Accordion panel="panel2" summary="Luto Gestacional">
                 <Stack
                   component={'iframe'}
+                  height={{
+                    xs: 210,
+                    lg: 500,
+                  }}
                   sx={{
                     width: '100%',
-                    height: 350,
-
-                    [theme.breakpoints.down('lg')]: {
-                      height: 500,
-                    },
-
-                    [theme.breakpoints.down('sm')]: {
-                      height: 210,
-                    },
                   }}
                   src="https://www.youtube.com/embed/A1wJz0kY63w?si=e3ZVnRoM1hjNipVg"
                   title="YouTube video player"
@@ -234,52 +98,22 @@ export const Caminhos = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.2,
-                ease: 'easeIn',
-              }}
-              sx={{
-                '&:hover': {
-                  transition: 'background .5s',
-                },
-              }}
-              expanded={expanded === 'panel3'}
-              onChange={handleChange('panel3')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
+              </Accordion>
+            </AccordionContainer>
+            <AccordionContainer delay={0.2}>
+              <Accordion
+                panel="panel3"
+                summary="Gestação de alto risco / diagnostico difícil"
               >
-                <Stack paddingY={2}>
-                  Gestação de alto risco / diagnostico difícil
-                </Stack>
-              </AccordionSummary>
-              <AccordionDetails>
                 <Stack
                   component={'iframe'}
+                  height={{
+                    xs: 210,
+                    lg: 500,
+                  }}
                   sx={{
                     width: '100%',
                     height: 350,
-
-                    [theme.breakpoints.down('lg')]: {
-                      height: 500,
-                    },
-
-                    [theme.breakpoints.down('sm')]: {
-                      height: 210,
-                    },
                   }}
                   src="https://www.youtube.com/embed/u45L-MCKyXw?si=nzXxjUM4iJWPta6X"
                   title="YouTube video player"
@@ -288,50 +122,18 @@ export const Caminhos = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.3,
-                ease: 'easeIn',
-              }}
-              sx={{
-                '&:hover': {
-                  transition: 'background .5s',
-                },
-              }}
-              expanded={expanded === 'panel4'}
-              onChange={handleChange('panel4')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-              >
-                <Stack paddingY={2}>Pós-parto / Puerpério</Stack>
-              </AccordionSummary>
-              <AccordionDetails>
+              </Accordion>
+            </AccordionContainer>
+            <AccordionContainer delay={0.3}>
+              <Accordion panel="panel4" summary="Pós-parto / Puerpério">
                 <Stack
                   component={'iframe'}
+                  height={{
+                    xs: 210,
+                    lg: 500,
+                  }}
                   sx={{
                     width: '100%',
-                    height: 350,
-
-                    [theme.breakpoints.down('lg')]: {
-                      height: 500,
-                    },
-
-                    [theme.breakpoints.down('sm')]: {
-                      height: 210,
-                    },
                   }}
                   src="https://www.youtube.com/embed/4jyDo2-HCMc?si=-xDqdUEwETi0IgnN"
                   title="YouTube video player"
@@ -340,62 +142,31 @@ export const Caminhos = () => {
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
-              </AccordionDetails>
-            </Accordion>
-            <Accordion
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.4,
-                ease: 'easeIn',
-              }}
-              sx={{
-                '&:hover': {
-                  transition: 'background .5s',
-                },
-              }}
-              expanded={expanded === 'panel5'}
-              onChange={handleChange('panel5')}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1-content"
-                id="panel1-header"
-              >
-                <Stack paddingY={2}>Processo de adoção</Stack>
-              </AccordionSummary>
-              <AccordionDetails>
+              </Accordion>
+            </AccordionContainer>
+            <AccordionContainer delay={0.4}>
+              <Accordion panel="panel5" summary="Processo de adoção">
                 <Stack
                   component={'iframe'}
+                  height={{
+                    xs: 210,
+                    lg: 500,
+                  }}
                   sx={{
                     width: '100%',
-                    height: 350,
-
-                    [theme.breakpoints.down('lg')]: {
-                      height: 500,
-                    },
-
-                    [theme.breakpoints.down('sm')]: {
-                      height: 210,
-                    },
                   }}
                   src="https://www.youtube.com/embed/4b2_X3_beuo?si=75zpJsB_vZmKxGiH"
                   title="YouTube video player"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                 />
-              </AccordionDetails>
-            </Accordion>
+              </Accordion>
+            </AccordionContainer>
           </Grid2>
         </Grid2>
       </MaxWidth>
-    </Stack>
+    </Wrapper>
   );
 };

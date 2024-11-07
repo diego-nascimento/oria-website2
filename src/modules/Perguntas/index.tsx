@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Accordion,
   AccordionDetails,
@@ -10,8 +8,10 @@ import {
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+
+import { Wrapper } from './components/Wrapper';
+import { TitleContainer } from './components/TitleContainer';
+import { PerguntaContainer } from './components/PerguntaContainer';
 
 const questions = [
   {
@@ -56,51 +56,15 @@ const questions = [
 ];
 
 export const Questions = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-    }
-  }, [isInView, mainControls]);
   return (
     <MaxWidth>
-      <Grid2
-        container
-        marginY={4}
-        paddingX={{
-          xs: 2,
-        }}
-        justifyContent={'center'}
-        id="duvidas"
-        ref={ref}
-        overflow={'hidden'}
-      >
+      <Wrapper>
         <Grid2
           size={{
             xs: 12,
           }}
-          component={motion.div}
-          variants={{
-            hidden: { opacity: 0, scale: 1.1 },
-            visible: { opacity: 1, scale: 1 },
-          }}
-          initial={'hidden'}
-          animate={mainControls}
-          transition={{
-            duration: 1,
-            delay: 0,
-            ease: 'easeIn',
-          }}
         >
-          <Stack
-            marginBottom={2}
-            alignItems={'center'}
-            justifyContent={'center'}
-            height={'100%'}
-          >
+          <TitleContainer>
             <Typography
               textTransform={'uppercase'}
               textAlign={'center'}
@@ -113,7 +77,7 @@ export const Questions = () => {
             >
               Dúvidas frequentes
             </Typography>
-          </Stack>
+          </TitleContainer>
         </Grid2>
         <Grid2
           size={{
@@ -123,24 +87,7 @@ export const Questions = () => {
           <Stack direction={'column'} gap={1}>
             {questions.map((qs, index) => {
               return (
-                <Stack
-                  key={qs.question}
-                  sx={{
-                    borderRadius: 8,
-                  }}
-                  component={motion.div}
-                  variants={{
-                    hidden: { opacity: 0, y: 40, filter: 'blur(1rem)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0rem)' },
-                  }}
-                  initial={'hidden'}
-                  animate={mainControls}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                    ease: 'easeIn',
-                  }}
-                >
+                <PerguntaContainer key={qs.question} index={index}>
                   <Accordion
                     sx={{
                       '&:hover': {
@@ -159,12 +106,12 @@ export const Questions = () => {
                     </AccordionSummary>
                     <AccordionDetails>{qs.answer}</AccordionDetails>
                   </Accordion>
-                </Stack>
+                </PerguntaContainer>
               );
             })}
           </Stack>
         </Grid2>
-      </Grid2>
+      </Wrapper>
     </MaxWidth>
   );
 };
