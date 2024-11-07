@@ -28,7 +28,7 @@ export const Caminhos = () => {
                 md: 700,
               }}
               sx={{
-                backgroundImage: 'url(/ariane2.png)',
+                backgroundImage: 'url(/ariane2.webp)',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',

@@ -130,9 +130,9 @@ export const Header = () => {
                   }}
                   direction={'row'}
                 >
-                  {items.map((item, index) => {
+                  {items.map((item) => {
                     return (
-                      <DesktopMenuItemContainer key={item.url} index={index}>
+                      <DesktopMenuItemContainer key={item.url}>
                         <Link href={item.url} key={item.url}>
                           <Button
                             variant="text"

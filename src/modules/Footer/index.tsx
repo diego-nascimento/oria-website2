@@ -20,7 +20,7 @@ export const Footer = () => {
         >
           <Stack>
             <Stack direction={'row'} gap={2}>
-              <Avatar src="oria2.jpg">AM</Avatar>
+              <Avatar src="oria2.webp">AM</Avatar>
               <Stack justifyContent={'center'}>
                 <Typography
                   fontSize={26}

@@ -42,7 +42,7 @@ export const Avaliacoes = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundImage: 'url(/mamae.jpg)',
+          backgroundImage: 'url(/mamae.webp)',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
