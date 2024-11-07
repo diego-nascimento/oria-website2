@@ -3,6 +3,7 @@ import { AppThemeProvider } from '@/shared/Providers/themeProvider';
 
 import { CssBaseline } from '@mui/material';
 import type { Metadata } from 'next';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 import '@fontsource/bree-serif/400.css';
 
@@ -53,10 +54,12 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <AppThemeProvider>
-          <CssBaseline />
-          {children}
-        </AppThemeProvider>
+        <AppRouterCacheProvider>
+          <AppThemeProvider>
+            <CssBaseline />
+            {children}
+          </AppThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

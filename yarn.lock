@@ -62,6 +62,13 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@babel/runtime@^7.26.0":
+  version "7.26.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.26.0.tgz#8600c2f595f277c60815256418b85356a65173c1"
+  integrity sha512-FDSOghenHTiToteC/QRlv2q3DhPZ/oOXTBoirfWNx1Cx3TMVcGWQtMMmQcSvb/JjpNeGzx8Pq/b4fKEJuWm1sw==
+  dependencies:
+    regenerator-runtime "^0.14.0"
+
 "@babel/template@^7.25.7":
   version "7.25.7"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.25.7.tgz"
@@ -93,11 +100,6 @@
     "@babel/helper-validator-identifier" "^7.25.7"
     to-fast-properties "^2.0.0"
 
-"@carlos8a/react-whatsapp-floating-button@^1.1.5":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@carlos8a/react-whatsapp-floating-button/-/react-whatsapp-floating-button-1.1.5.tgz#c77196e5a1e7f605c1786c92cbadffbb89757aa1"
-  integrity sha512-Jv8iF81g7TfYyD5pmy8qeBpJCJBrCOEf/6TcZH0obBarsGIbPh4rOGm2ys64305Y92upAsgrQvdYxB0TL9Ez3A==
-
 "@emotion/babel-plugin@^11.12.0":
   version "11.12.0"
   resolved "https://registry.npmjs.org/@emotion/babel-plugin/-/babel-plugin-11.12.0.tgz"
@@ -117,7 +119,7 @@
 
 "@emotion/cache@^11.11.0", "@emotion/cache@^11.13.0", "@emotion/cache@^11.13.1":
   version "11.13.1"
-  resolved "https://registry.npmjs.org/@emotion/cache/-/cache-11.13.1.tgz"
+  resolved "https://registry.yarnpkg.com/@emotion/cache/-/cache-11.13.1.tgz#fecfc54d51810beebf05bf2a161271a1a91895d7"
   integrity sha512-iqouYkuEblRcXmylXIwwOodiEK5Ifl7JcX7o6V4jI3iW4mLXX3dmt5xwBtIkJiQEXFAI+pC8X0i67yiPkH9Ucw==
   dependencies:
     "@emotion/memoize" "^0.9.0"
@@ -355,6 +357,13 @@
   integrity sha512-7NNcjW5JoT9jHagrVbARA1o41vQY2xezDamtke+mEKKZmsJyejfRBOacSrPDfjZQ//lyhIjNKyzAwisxYJR47w==
   dependencies:
     "@babel/runtime" "^7.25.6"
+
+"@mui/material-nextjs@^6.1.6":
+  version "6.1.6"
+  resolved "https://registry.yarnpkg.com/@mui/material-nextjs/-/material-nextjs-6.1.6.tgz#d1b858cd62ae4917938a1dde7bedeb359763512d"
+  integrity sha512-54eTTQgUY6UgXPsR781dMF4R0p9YAkPF8OreiXq6G/1hF7m6D5FiMHBmfzRIaZQ1BkS8RluoSu38m0PBU9YBTA==
+  dependencies:
+    "@babel/runtime" "^7.26.0"
 
 "@mui/material@^5.4.1":
   version "5.16.7"
@@ -3204,3 +3213,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zustand@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.1.tgz#2bdca5e4be172539558ce3974fe783174a48fdcf"
+  integrity sha512-pRET7Lao2z+n5R/HduXMio35TncTlSW68WsYBq2Lg1ASspsNGjpwLAsij3RpouyV6+kHMwwwzP0bZPD70/Jx/w==

@@ -1,88 +1,25 @@
-'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { Box, Button, Stack, Typography, useTheme } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+
+import { Wrapper } from './components/Wrapper';
+import { VideoWrapper } from './components/VideoWrapper';
+import { Iframe } from './components/IFrame';
+import { TitleContainer } from './components/TitleContainer';
+import { SubTitleContainer } from './components/SubTitleContianer';
+import { TextContainer } from './components/TextContainer';
+import { ButtonContainer } from './components/ButtonContainer';
 
 export const Apresentacao = () => {
-  const theme = useTheme();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
-    }
-  }, [isInView, mainControls]);
   return (
-    <Stack paddingY={4} paddingX={2} id="sobre-mim" ref={ref}>
+    <Wrapper>
       <MaxWidth>
         <Stack borderRadius={8} alignItems={'center'}>
-          <Stack
-            component={motion.div}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: { opacity: 1, scale: 1 },
-            }}
-            initial={'hidden'}
-            animate={mainControls}
-            transition={{
-              duration: 0.5,
-              delay: 0,
-              ease: 'easeIn',
-            }}
-            bgcolor={theme.palette.secondary.main}
-            width={'100%'}
-            maxWidth={600}
-            paddingX={{
-              xs: 2,
-              md: 4,
-            }}
-            paddingY={{
-              xs: 4,
-              md: 2,
-            }}
-            borderRadius={8}
-            gap={1}
-          >
-            <motion.iframe
-              variants={{
-                hidden: { opacity: 0 },
-                visible: { opacity: 1 },
-              }}
-              initial={'hidden'}
-              animate={mainControls}
-              transition={{
-                duration: 1,
-                delay: 0.25,
-                ease: 'easeIn',
-              }}
-              style={{
-                aspectRatio: '16/9',
-              }}
-              src="https://www.youtube.com/embed/DnltvwWUlHk?si=SdhcTIvqWbJdoNwV"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media;  "
-            />
-          </Stack>
+          <VideoWrapper>
+            <Iframe />
+          </VideoWrapper>
         </Stack>
-        <Stack
-          component={motion.div}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, scale: 1 },
-          }}
-          initial={'hidden'}
-          animate={mainControls}
-          transition={{
-            duration: 1,
-            delay: 0.1,
-            ease: 'easeIn',
-          }}
-        >
+        <TitleContainer>
           <Typography
             marginTop={4}
             fontSize={{
@@ -96,21 +33,8 @@ export const Apresentacao = () => {
           >
             Ariane dos Santos Miranda - Psicóloga Obstétrica
           </Typography>
-        </Stack>
-        .
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          initial={'hidden'}
-          animate={mainControls}
-          transition={{
-            duration: 1,
-            delay: 0.3,
-            ease: 'easeIn',
-          }}
-        >
+        </TitleContainer>
+        <SubTitleContainer>
           <Typography
             color="primary"
             fontSize={{
@@ -123,21 +47,9 @@ export const Apresentacao = () => {
           >
             Registro Profissional: CRP04/67556
           </Typography>
-        </motion.div>
+        </SubTitleContainer>
         <Stack marginTop={4} gap={4}>
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial={'hidden'}
-            animate={mainControls}
-            transition={{
-              duration: 0.5,
-              delay: 0.4,
-              ease: 'easeIn',
-            }}
-          >
+          <TextContainer delay={0.4}>
             <Typography
               fontSize={{
                 xs: 18,
@@ -151,20 +63,8 @@ export const Apresentacao = () => {
               <strong>mães e famílias</strong> do planejamento familiar até
               ​questões com a criação dos filhos.
             </Typography>
-          </motion.div>
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial={'hidden'}
-            animate={mainControls}
-            transition={{
-              duration: 0.5,
-              delay: 0.5,
-              ease: 'easeIn',
-            }}
-          >
+          </TextContainer>
+          <TextContainer delay={0.5}>
             <Typography
               fontSize={{
                 xs: 18,
@@ -179,20 +79,8 @@ export const Apresentacao = () => {
               <Box component={'strong'}>especializando​</Box> para{' '}
               <strong>ajudar você</strong>.
             </Typography>
-          </motion.div>
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial={'hidden'}
-            animate={mainControls}
-            transition={{
-              duration: 0.5,
-              delay: 0.6,
-              ease: 'easeIn',
-            }}
-          >
+          </TextContainer>
+          <TextContainer delay={0.6}>
             <Typography
               fontSize={{
                 xs: 18,
@@ -207,7 +95,7 @@ export const Apresentacao = () => {
               e Pós-graduanda em <strong>Saúde Mental Perinatal (CECMP)</strong>
               .
             </Typography>
-          </motion.div>
+          </TextContainer>
         </Stack>
         <Stack
           alignItems={'center'}
@@ -216,19 +104,7 @@ export const Apresentacao = () => {
             md: 8,
           }}
         >
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, x: -100, scale: 0.99 },
-              visible: { opacity: 1, x: 0, scale: 1 },
-            }}
-            initial={'hidden'}
-            animate={mainControls}
-            transition={{
-              duration: 0.75,
-              delay: 0.7,
-              ease: 'easeOut',
-            }}
-          >
+          <ButtonContainer>
             <Box
               component={Link}
               href="https://wa.me/message/WFTAHMJVVAHKI1"
@@ -238,9 +114,9 @@ export const Apresentacao = () => {
                 Agendar agora
               </Button>
             </Box>
-          </motion.div>
+          </ButtonContainer>
         </Stack>
       </MaxWidth>
-    </Stack>
+    </Wrapper>
   );
 };

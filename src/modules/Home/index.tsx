@@ -1,21 +1,14 @@
-'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import {
-  Button,
-  Grid2,
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
+import { Box, Button, Grid2, Stack, Typography } from '@mui/material';
 
 import Link from 'next/link';
 
-import { motion } from 'framer-motion';
+import { TextContainer } from './components/TextContainer';
+import { ButtonContainer } from './components/ButtonContainer';
+import { OriaImage } from './components/OriaImage';
+import { BannerContainer } from './components/BannerContainer';
 
 export const Home = () => {
-  const theme = useTheme();
-  const mediaquery = useMediaQuery(theme.breakpoints.up('sm'));
   return (
     <Stack alignItems={'center'} bgcolor={'secondary.main'} id="home">
       <MaxWidth>
@@ -45,19 +38,7 @@ export const Home = () => {
               alignItems={'center'}
             >
               <Stack height={'100%'} justifyContent={'center'} gap={4}>
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 20, scale: 0.99 },
-                    visible: { opacity: 1, y: 0, scale: 1 },
-                  }}
-                  initial={'hidden'}
-                  animate={'visible'}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0,
-                    ease: 'easeOut',
-                  }}
-                >
+                <TextContainer>
                   <Typography
                     variant="h1"
                     textTransform={'uppercase'}
@@ -72,20 +53,9 @@ export const Home = () => {
                   >
                     Psicologa de Mães Gestantes
                   </Typography>
-                </motion.div>
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, y: 40, scale: 0.99 },
-                    visible: { opacity: 1, y: 0, scale: 1 },
-                  }}
-                  initial={'hidden'}
-                  animate={'visible'}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0,
-                    ease: 'easeOut',
-                  }}
-                >
+                </TextContainer>
+
+                <TextContainer>
                   <Typography
                     variant="h1"
                     fontSize={{
@@ -101,20 +71,8 @@ export const Home = () => {
                     Você não precisa ​enfrentar tudo isso​{' '}
                     <strong>sozinha</strong>.
                   </Typography>
-                </motion.div>
-                <motion.div
-                  variants={{
-                    hidden: { opacity: 0, x: -100, scale: 0.99 },
-                    visible: { opacity: 1, x: 0, scale: 1 },
-                  }}
-                  initial={'hidden'}
-                  animate={'visible'}
-                  transition={{
-                    duration: 0.75,
-                    delay: 0.45,
-                    ease: 'easeOut',
-                  }}
-                >
+                </TextContainer>
+                <ButtonContainer>
                   <Stack
                     component={Link}
                     href="https://wa.me/message/WFTAHMJVVAHKI1"
@@ -124,47 +82,39 @@ export const Home = () => {
                       md: 'flex-start',
                     }}
                   >
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      size={mediaquery ? 'large' : 'medium'}
+                    <Box
+                      display={{
+                        xs: 'none',
+                        md: 'block',
+                      }}
                     >
-                      FALE COMIGO AGORA
-                    </Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size={'medium'}
+                      >
+                        FALE COMIGO AGORA
+                      </Button>
+                    </Box>
+                    <Box
+                      display={{
+                        xs: 'block',
+                        md: 'none',
+                      }}
+                    >
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        size={'large'}
+                      >
+                        FALE COMIGO AGORA
+                      </Button>
+                    </Box>
                   </Stack>
-                </motion.div>
+                </ButtonContainer>
               </Stack>
             </Grid2>
-            <Grid2
-              component={motion.div}
-              variants={{
-                hidden: { opacity: 0, y: 100 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial={'hidden'}
-              animate={'visible'}
-              transition={{
-                duration: 0.5,
-                delay: 1,
-                ease: 'easeOut',
-              }}
-              size={{
-                xs: 12,
-                lg: 7,
-              }}
-              position={'relative'}
-              minHeight={{
-                xs: '380px',
-                md: '1000px',
-                lg: 'auto',
-              }}
-              sx={{
-                backgroundImage: 'url(/ariane.png)',
-                backgroundPosition: 'top',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-              }}
-            ></Grid2>
+            <OriaImage />
           </Grid2>
         </Stack>
       </MaxWidth>
@@ -187,19 +137,7 @@ export const Home = () => {
           zIndex: 10,
         }}
       >
-        <motion.div
-          variants={{
-            hidden: { opacity: 0, scale: 0.9 },
-            visible: { opacity: 1, y: 0, scale: 1 },
-          }}
-          initial={'hidden'}
-          animate={'visible'}
-          transition={{
-            duration: 0.5,
-            delay: 1,
-            ease: 'easeOut',
-          }}
-        >
+        <BannerContainer>
           <Typography
             variant="h3"
             color="#fff"
@@ -212,7 +150,7 @@ export const Home = () => {
           >
             Psicóloga para Mães - Psicólogas De Gestante - Psicóloga Online
           </Typography>
-        </motion.div>
+        </BannerContainer>
       </Stack>
     </Stack>
   );

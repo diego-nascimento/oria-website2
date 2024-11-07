@@ -1,28 +1,26 @@
-'use client';
-
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import {
-  AppBar,
   Box,
   Button,
   Divider,
-  Drawer,
-  IconButton,
   List,
-  ListItem,
   ListItemButton,
   ListItemText,
   Stack,
   Toolbar,
-  useMediaQuery,
-  useScrollTrigger,
-  useTheme,
 } from '@mui/material';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+
 import Image from 'next/image';
+import { AppBar } from './components/AppBar';
+import { MobileDrawer } from './components/MobileDrawer';
+import { ListItemContainer } from './components/ListItemContainer';
+import { IconButtonContainer } from './components/IconButtonContainer';
+import { LogoWrapper } from './components/LogoWrapper';
+import { MenuButtonContainer } from './components/MenuButtonContainer';
+import { DesktopMenuItemContainer } from './components/DesktopMenuItemContainer';
+import { Wrapper } from './components/Wrapper.tsx';
 
 const items = [
   {
@@ -52,52 +50,9 @@ const items = [
 ];
 
 export const Header = () => {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('md'));
-  const isTrigged = useScrollTrigger({
-    threshold: 0,
-  });
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
-    }
-  }, [isInView, mainControls]);
-
-  const [anchorEl, setAnchorEl] = useState<boolean>(false);
-  const open = Boolean(anchorEl);
-  const toggleDrawer = () => {
-    setAnchorEl(!anchorEl);
-  };
-
-  useEffect(() => {
-    if (matches) setAnchorEl(false);
-  }, [matches]);
-
   return (
     <>
-      <Drawer
-        sx={{
-          display: {
-            xs: 'block',
-            md: 'none',
-          },
-        }}
-        anchor={'left'}
-        open={open}
-        onClose={toggleDrawer}
-        variant="temporary"
-        PaperProps={{
-          sx: {
-            width: '300px',
-            maxWidth: '70%',
-          },
-        }}
-      >
+      <MobileDrawer>
         <Box
           sx={{
             width: '100%',
@@ -106,13 +61,7 @@ export const Header = () => {
         >
           <List>
             {items.map((item) => (
-              <ListItem
-                key={item.url}
-                disablePadding
-                onClick={toggleDrawer}
-                component={Link}
-                href={item.url}
-              >
+              <ListItemContainer key={item.url} url={item.url}>
                 <ListItemButton>
                   <ListItemText
                     primaryTypographyProps={{
@@ -122,23 +71,16 @@ export const Header = () => {
                     primary={item.text}
                   />
                 </ListItemButton>
-              </ListItem>
+              </ListItemContainer>
             ))}
           </List>
           <Divider />
         </Box>
-      </Drawer>
-      <AppBar color="secondary" position="sticky" elevation={isTrigged ? 8 : 0}>
+      </MobileDrawer>
+
+      <AppBar>
         <Toolbar>
-          <Stack
-            flex={1}
-            zIndex={theme.zIndex.drawer}
-            paddingY={{
-              xs: 0,
-              md: 1,
-            }}
-            ref={ref}
-          >
+          <Wrapper>
             <MaxWidth>
               <Stack
                 flex={1}
@@ -150,22 +92,14 @@ export const Header = () => {
                 justifyContent={'space-between'}
               >
                 <Link href={'/#home'}>
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0, x: -30, scale: 0.99 },
-                      visible: { opacity: 1, x: 0, y: 0, scale: 1 },
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    transition={{ duration: 1, delay: 0.25, ease: 'easeInOut' }}
-                  >
+                  <LogoWrapper>
                     <Image
                       src={'/logo.png'}
                       width={130}
                       height={30}
                       alt="Ariane Miranda Logo"
                     />
-                  </motion.div>
+                  </LogoWrapper>
                 </Link>
 
                 <Stack
@@ -176,25 +110,18 @@ export const Header = () => {
                     },
                   }}
                 >
-                  <motion.div
-                    variants={{
-                      hidden: { opacity: 0 },
-                      visible: { opacity: 1 },
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    transition={{ duration: 1, delay: 1, ease: 'easeInOut' }}
-                  >
-                    <IconButton onClick={toggleDrawer}>
+                  <MenuButtonContainer>
+                    <IconButtonContainer>
                       <MenuIcon
                         sx={{
                           color: 'secondary.contrastText',
                         }}
                       />
-                    </IconButton>
-                  </motion.div>
+                    </IconButtonContainer>
+                  </MenuButtonContainer>
                 </Stack>
                 <Stack
+                  component={'nav'}
                   sx={{
                     display: {
                       xs: 'none',
@@ -205,20 +132,7 @@ export const Header = () => {
                 >
                   {items.map((item, index) => {
                     return (
-                      <motion.div
-                        variants={{
-                          menuItemHidden: { opacity: 0, y: 10, scale: 0.99 },
-                          menuItemVisible: { opacity: 1, y: 0, scale: 1 },
-                        }}
-                        initial={'menuItemHidden'}
-                        animate={mainControls}
-                        transition={{
-                          duration: 0.5,
-                          delay: index * 0.25,
-                          ease: 'easeOut',
-                        }}
-                        key={item.url}
-                      >
+                      <DesktopMenuItemContainer key={item.url} index={index}>
                         <Link href={item.url} key={item.url}>
                           <Button
                             variant="text"
@@ -232,13 +146,13 @@ export const Header = () => {
                             {item.text}
                           </Button>
                         </Link>
-                      </motion.div>
+                      </DesktopMenuItemContainer>
                     );
                   })}
                 </Stack>
               </Stack>
             </MaxWidth>
-          </Stack>
+          </Wrapper>
         </Toolbar>
       </AppBar>
     </>
