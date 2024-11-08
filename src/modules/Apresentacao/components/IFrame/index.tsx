@@ -1,12 +1,22 @@
 'use client';
 
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import { useInView } from 'react-intersection-observer';
+
 export const Iframe = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
-    <LiteYouTubeEmbed
-      id={'DnltvwWUlHk'}
+    <iframe
+      ref={ref}
+      className={inView ? 'awaitAnimateOpacity' : 'animateOpaticy'}
+      style={{
+        aspectRatio: '16/9',
+      }}
+      src="https://www.youtube.com/embed/DnltvwWUlHk?si=SdhcTIvqWbJdoNwV"
       title="YouTube video player"
-      adNetwork={true}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media;  "
     />
   );
 };
