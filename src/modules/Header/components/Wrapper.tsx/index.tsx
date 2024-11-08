@@ -1,25 +1,8 @@
-'use client';
 import { Stack } from '@mui/material';
-import { useAnimation, useInView } from 'framer-motion';
-import { PropsWithChildren, useEffect, useRef } from 'react';
-import { useMainControl } from '../../store/useMainControl';
+
+import { PropsWithChildren } from 'react';
 
 export const Wrapper = ({ children }: PropsWithChildren) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const mainControls = useAnimation();
-  const { intiate } = useMainControl();
-  useEffect(() => {
-    intiate(mainControls);
-  }, [mainControls, intiate]);
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-      setTimeout(() => mainControls.start('menuItemVisible'), 1000);
-    }
-  }, [isInView, mainControls]);
-
   return (
     <Stack
       flex={1}
@@ -28,7 +11,6 @@ export const Wrapper = ({ children }: PropsWithChildren) => {
         xs: 0,
         md: 1,
       }}
-      ref={ref}
     >
       {children}
     </Stack>

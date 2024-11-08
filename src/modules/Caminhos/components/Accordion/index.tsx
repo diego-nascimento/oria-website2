@@ -6,7 +6,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import { motion } from 'framer-motion';
+
 import { PropsWithChildren } from 'react';
 import { useHandlePanelOpen } from '../../store/useHandlePanelOpen';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -24,7 +24,6 @@ export const Accordion = ({
   const { handleChange, panelOpen } = useHandlePanelOpen();
   return (
     <MuiAccordion
-      component={motion.div}
       sx={{
         '&:hover': {
           transition: 'background .5s',

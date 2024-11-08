@@ -1,7 +1,6 @@
-'use client';
+import { Stack } from '@mui/material';
 import { PropsWithChildren } from 'react';
-import { motion } from 'framer-motion';
 
 export const LogoWrapper = ({ children }: PropsWithChildren) => {
-  return <motion.div>{children}</motion.div>;
+  return <Stack>{children}</Stack>;
 };

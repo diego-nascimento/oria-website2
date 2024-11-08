@@ -7,15 +7,12 @@ interface Props {
 }
 
 export const TextContainer = ({
-  children,
-  delay,
+  children
+
 }: PropsWithChildren<Props>) => {
   return (
     <Stack
-      className="animate-text"
-      sx={{
-        animationDelay: `${delay}s`,
-      }}
+     
     >
       {children}
     </Stack>

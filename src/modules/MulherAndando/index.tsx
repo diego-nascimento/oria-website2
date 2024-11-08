@@ -45,7 +45,9 @@ export const MulherAndando = () => {
             zIndex: '-1',
           }}
         >
-          <video autoPlay loop muted></video>
+          <video autoPlay loop muted>
+            <source src={'videomuie.mp4'} type="video/mp4" />
+          </video>
         </Stack>
       </Stack>
     </Stack>

@@ -1,55 +1,20 @@
-'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 
-import {
-  Avatar,
-  Box,
-  Button,
-  Grid2,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
-import { useAnimation, useInView } from 'framer-motion';
+import { Avatar, Box, Button, Grid2, Stack, Typography } from '@mui/material';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+
 import { ImageContainer } from './components/ImageContainer';
 import { TextContainer } from './components/TextContainer';
 import { PhraseContainer } from './components/PhraseContainer';
 import { ButtonContainer } from './components/ButtonContainer';
 
 export const PIlares = () => {
-  const theme = useTheme();
-
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const mainControls = useAnimation();
-
-  useEffect(() => {
-    if (isInView) {
-      mainControls.start('visible');
-    }
-  }, [isInView, mainControls]);
-
   return (
-    <Stack py={4} px={2} id="psicoterapia" ref={ref}>
+    <Stack py={4} px={2} id="psicoterapia">
       <MaxWidth>
-        <Stack
-          component={motion.div}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, scale: 1 },
-          }}
-          initial={'hidden'}
-          animate={mainControls}
-          transition={{
-            duration: 1,
-            delay: 0.5,
-            ease: 'easeIn',
-          }}
-        >
+        <Stack>
           <Typography
             textTransform={'uppercase'}
             textAlign={'center'}
@@ -92,19 +57,6 @@ export const PIlares = () => {
               <Stack width={'100%'} maxWidth={750} justifyContent={'center'}>
                 <Stack gap={4} marginTop={4}>
                   <Stack
-                    ref={ref}
-                    component={motion.div}
-                    variants={{
-                      hidden: { opacity: 0, x: 70 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    initial={'hidden'}
-                    animate={mainControls}
-                    transition={{
-                      duration: 1,
-                      delay: 0.3,
-                      ease: 'easeOut',
-                    }}
                     direction={{
                       xs: 'column',
                       md: 'row',
@@ -116,9 +68,7 @@ export const PIlares = () => {
                     gap={2}
                   >
                     <Box marginTop={1}>
-                      <Avatar
-                        sx={{ backgroundColor: theme.palette.secondary.main }}
-                      >
+                      <Avatar sx={{ backgroundColor: 'secondary.main' }}>
                         1
                       </Avatar>
                     </Box>
@@ -139,9 +89,7 @@ export const PIlares = () => {
                   </Stack>
                   <TextContainer delay={0.5}>
                     <Box marginTop={1}>
-                      <Avatar
-                        sx={{ backgroundColor: theme.palette.secondary.main }}
-                      >
+                      <Avatar sx={{ backgroundColor: 'secondary.main' }}>
                         2
                       </Avatar>
                     </Box>
@@ -166,9 +114,7 @@ export const PIlares = () => {
                   </TextContainer>
                   <TextContainer delay={0.6}>
                     <Box marginTop={1}>
-                      <Avatar
-                        sx={{ backgroundColor: theme.palette.secondary.main }}
-                      >
+                      <Avatar sx={{ backgroundColor: 'secondary.main' }}>
                         3
                       </Avatar>
                     </Box>
@@ -193,9 +139,7 @@ export const PIlares = () => {
                   </TextContainer>
                   <TextContainer delay={0.7}>
                     <Box marginTop={1}>
-                      <Avatar
-                        sx={{ backgroundColor: theme.palette.secondary.main }}
-                      >
+                      <Avatar sx={{ backgroundColor: 'secondary.main' }}>
                         4
                       </Avatar>
                     </Box>

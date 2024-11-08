@@ -1,16 +1,6 @@
-'use client';
-
-import { useInView } from 'react-intersection-observer';
-
 export const Iframe = () => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
   return (
     <iframe
-      ref={ref}
-      className={inView ? 'awaitAnimateOpacity' : 'animateOpaticy'}
       style={{
         aspectRatio: '16/9',
       }}
