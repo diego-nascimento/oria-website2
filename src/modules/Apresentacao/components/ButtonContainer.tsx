@@ -10,6 +10,7 @@ export const ButtonContainer = ({ children }: PropsWithChildren) => {
     threshold: 0.2,
   });
   return (
+    // <Stack className={inView ? 'animateLeft' : 'waitingAnimateLeft'} ref={ref}>
     <Stack className={inView ? 'animateLeft' : 'waitingAnimateLeft'} ref={ref}>
       {children}
     </Stack>

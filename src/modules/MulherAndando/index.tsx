@@ -8,7 +8,6 @@ export const MulherAndando = () => {
       <Stack
         position={'relative'}
         sx={{
-          backgroundImage: 'url(videomuie.mp4)',
           overflow: 'hidden',
         }}
       >
@@ -46,9 +45,7 @@ export const MulherAndando = () => {
             zIndex: '-1',
           }}
         >
-          <video autoPlay loop muted>
-            <source src={'videomuie.mp4'} type="video/mp4" />
-          </video>
+          <video autoPlay loop muted></video>
         </Stack>
       </Stack>
     </Stack>
