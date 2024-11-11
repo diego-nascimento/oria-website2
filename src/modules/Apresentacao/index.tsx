@@ -1,3 +1,4 @@
+'use client';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { Iframe } from './components/IFrame';
 
 import { TextContainer } from './components/TextContainer';
 import { ButtonContainer } from './components/ButtonContainer';
+import { gEvent } from '@/shared/ga/events';
 
 export const Apresentacao = () => {
   return (
@@ -109,7 +111,13 @@ export const Apresentacao = () => {
               href="https://wa.me/message/WFTAHMJVVAHKI1"
               target="_blank"
             >
-              <Button variant="contained" size="large">
+              <Button
+                variant="contained"
+                size="large"
+                onClick={() =>
+                  gEvent({ event: 'whatsapp', location: 'apresentacao' })
+                }
+              >
                 Agendar agora
               </Button>
             </Box>

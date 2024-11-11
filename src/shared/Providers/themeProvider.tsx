@@ -1,7 +1,7 @@
 'use client';
 import { theme } from '@/style/theme';
 
-import { GlobalStyles, ThemeProvider } from '@mui/material';
+import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material';
 import { PropsWithChildren } from 'react';
 
 export const AppThemeProvider = ({ children }: PropsWithChildren) => {
@@ -160,6 +160,7 @@ export const AppThemeProvider = ({ children }: PropsWithChildren) => {
           },
         })}
       />
+      <CssBaseline />
       {children}
     </ThemeProvider>
   );
