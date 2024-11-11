@@ -123,6 +123,7 @@ export const Second = () => {
           </TextContainer>
           <ButtonContainer>
             <Box
+              id="whatsapp"
               component={Link}
               href="https://wa.me/message/WFTAHMJVVAHKI1"
               target="_blank"

@@ -32,6 +32,16 @@ export default function RootLayout({
   gtag('config', 'G-K2Q6Z3WDLV');`,
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P97GXD29');`,
+          }}
+        />
+
         <meta name="color-scheme" content="light only" />
         <link
           rel="apple-touch-icon"
@@ -52,6 +62,15 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-P97GXD29"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
+        </noscript>
+
         <AppThemeProvider>{children}</AppThemeProvider>
       </body>
     </html>

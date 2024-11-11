@@ -74,15 +74,16 @@ export const Home = () => {
                 </TextContainer>
                 <ButtonContainer>
                   <Stack
-                    component={Link}
-                    href="https://wa.me/message/WFTAHMJVVAHKI1"
-                    target="_blank"
                     alignItems={{
                       xs: 'center',
                       md: 'flex-start',
                     }}
                   >
                     <Box
+                      id="whatsapp"
+                      component={Link}
+                      href="https://wa.me/message/WFTAHMJVVAHKI1"
+                      target="_blank"
                       display={{
                         xs: 'none',
                         md: 'block',

@@ -9,7 +9,6 @@ import { Iframe } from './components/IFrame';
 
 import { TextContainer } from './components/TextContainer';
 import { ButtonContainer } from './components/ButtonContainer';
-import { gEvent } from '@/shared/ga/events';
 
 export const Apresentacao = () => {
   return (
@@ -110,14 +109,9 @@ export const Apresentacao = () => {
               component={Link}
               href="https://wa.me/message/WFTAHMJVVAHKI1"
               target="_blank"
+              id="whatsapp"
             >
-              <Button
-                variant="contained"
-                size="large"
-                onClick={() =>
-                  gEvent({ event: 'whatsapp', location: 'apresentacao' })
-                }
-              >
+              <Button variant="contained" size="large">
                 Agendar agora
               </Button>
             </Box>

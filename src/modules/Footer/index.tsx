@@ -64,6 +64,7 @@ export const Footer = () => {
               </Typography>
               <Stack gap={1}>
                 <Link
+                  id="whatsapp"
                   href={'https://wa.me/message/WFTAHMJVVAHKI1'}
                   target="_blank"
                 >

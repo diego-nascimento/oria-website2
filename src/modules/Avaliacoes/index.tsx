@@ -101,6 +101,7 @@ export const Avaliacoes = () => {
               component={Link}
               href="https://wa.me/message/WFTAHMJVVAHKI1"
               target="_blank"
+              id="whatsapp"
             >
               <Button variant="contained">Começar agora</Button>
             </Box>
