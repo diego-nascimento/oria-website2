@@ -4,13 +4,16 @@ import { Container } from './components/Container';
 
 export const MulherAndando = () => {
   return (
-    <Stack>
-      <Stack
-        position={'relative'}
-        sx={{
-          overflow: 'hidden',
-        }}
-      >
+    <Stack
+      sx={{
+        backgroundImage: 'url(/freedom.jpg)',
+        backgroundPosition: 'top',
+
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <Stack>
         <MaxWidth>
           <Stack
             paddingX={2}
@@ -28,27 +31,6 @@ export const MulherAndando = () => {
             </Stack>
           </Stack>
         </MaxWidth>
-        <Stack
-          width={{
-            xs: '200vw',
-            md: '100vw',
-          }}
-          right={{
-            xs: -250,
-            md: 0,
-          }}
-          sx={{
-            height: '1200px',
-            objectFit: 'cover',
-            position: 'absolute',
-
-            zIndex: '-1',
-          }}
-        >
-          <video autoPlay loop muted>
-            <source src={'videomuie.mp4'} type="video/mp4" />
-          </video>
-        </Stack>
       </Stack>
     </Stack>
   );
