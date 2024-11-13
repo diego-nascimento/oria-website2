@@ -1,7 +1,7 @@
 import { MaxWidth } from '@/shared/components/MaxWidth';
 
 import { Box, Button, Grid2, Stack, Typography } from '@mui/material';
-import { AssetImage } from './assets/assetImage';
+
 import Link from 'next/link';
 
 import { Wrapper } from './components/Wrapper';
@@ -46,16 +46,13 @@ export const Second = () => {
             </Typography>
           </TextContainer>
           <ImageContainer>
-            <Box position={'absolute'} maxWidth={'300px'}>
+            <Box maxWidth={'300px'}>
               <Image
                 width={300}
                 height={300}
-                src="/bebe.png"
+                src="/bebe.webp"
                 alt="imagem do bebe"
               />
-            </Box>
-            <Box width={'100%'} maxWidth={'330px'}>
-              <AssetImage />
             </Box>
           </ImageContainer>
           <TextContainer delay={0.2}>
