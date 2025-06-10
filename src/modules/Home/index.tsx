@@ -78,12 +78,12 @@ export const Home = () => {
                       xs: 'center',
                       md: 'flex-start',
                     }}
+                    id="whatsapp"
+                    component={Link}
+                    href="https://wa.me/message/WFTAHMJVVAHKI1"
+                    target="_blank"
                   >
                     <Box
-                      id="whatsapp"
-                      component={Link}
-                      href="https://wa.me/message/WFTAHMJVVAHKI1"
-                      target="_blank"
                       display={{
                         xs: 'none',
                         md: 'block',

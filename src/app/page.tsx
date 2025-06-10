@@ -19,7 +19,6 @@ export default function HomePage() {
     <Stack width={'100%'} height={'100vh'} overflow={'auto'}>
       <WhatsappButton />
       <Header />
-
       <Home />
       <Apresentacao />
       <Banner />
