@@ -47,6 +47,10 @@ const items = [
     text: 'Dúvidas',
     url: '#duvidas',
   },
+  {
+    text: 'Blog',
+    url: 'http://localhost:3000',
+  },
 ];
 
 export const Header = () => {
