@@ -6,18 +6,18 @@ import { Avatar } from './component/Avatar';
 
 export const Footer = () => {
   return (
-    <Stack py={4} px={2}>
+    <Stack>
       <Divider />
       <MaxWidth>
-        <Stack
-          marginTop={4}
-          direction={{
-            xs: 'column',
-            md: 'row',
-          }}
-          justifyContent={'space-between'}
-          gap={4}
-        >
+        <Stack py={4} px={2}>
+          <Stack
+            direction={{
+              xs: 'column',
+              md: 'row',
+            }}
+            justifyContent={'space-between'}
+            gap={4}
+          >
           <Stack>
             <Stack direction={'row'} gap={2}>
               <Avatar src="oria2.webp">AM</Avatar>
@@ -279,6 +279,7 @@ export const Footer = () => {
               ​risco de morte, ligue imediatamente para o SAMU (192), ou para o
               Corpo de Bombeiros (193).
             </Typography>
+          </Stack>
           </Stack>
         </Stack>
       </MaxWidth>
