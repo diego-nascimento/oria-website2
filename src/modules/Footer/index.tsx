@@ -143,7 +143,7 @@ export const Footer = () => {
                     fontStyle={'italic'}
                     fontSize={18}
                   >
-                    Av. Prefeito Corrado Roberti, 444, ​
+                    R. Cel. Otaviano da Rocha, 15 ​
                   </Typography>
                   <Typography
                     textAlign={{
@@ -153,7 +153,7 @@ export const Footer = () => {
                     fontStyle={'italic'}
                     fontSize={18}
                   >
-                    ​centro, Tocantins-MG 36512-000.​​
+                    São Domingos, Ubá - MG, 36504-042.​​
                   </Typography>
                   <Typography
                     textAlign={{
@@ -169,7 +169,7 @@ export const Footer = () => {
                       color={'#001f3f'}
                       fontStyle={'italic'}
                     >
-                      Clinica Estetic Med​
+                      Clinica Aflora
                     </Box>{' '}
                   </Typography>
                 </Stack>

@@ -8,7 +8,7 @@ export default function GestaoDeManutencao() {
   return (
     <Stack width={'100%'} height={'100vh'} overflow={'auto'}>
       <WhatsappButton />
-      <Header />
+      
       
       {/* Seção principal em construção */}
       <Stack alignItems={'center'} bgcolor={'secondary.main'} minHeight={'85vh'}>
