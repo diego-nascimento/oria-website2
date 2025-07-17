@@ -1,8 +1,10 @@
-import { Stack, Typography, Box, Grid } from '@mui/material';
+import { Stack, Typography, Box, Grid, Button } from '@mui/material';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Footer } from '@/modules/Footer';
 import { WhatsappButton } from '@/modules/WhatsappButton';
 import PsychologyIcon from '@mui/icons-material/Psychology';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import Link from 'next/link';
 
 interface ComingSoonProps {
   timeLeft: {
@@ -380,6 +382,44 @@ export const ComingSoon = ({ timeLeft }: ComingSoonProps) => {
               Enquanto isso, você pode entrar em contato conosco através do
               WhatsApp para agendar uma consulta ou tirar suas dúvidas.
             </Typography>
+
+            {/* Botão de Agendar */}
+            <Button
+              component={Link}
+              href="https://wa.me/message/WFTAHMJVVAHKI1"
+              target="_blank"
+              variant="contained"
+              size="large"
+              startIcon={<WhatsAppIcon />}
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: 16,
+                fontWeight: 600,
+                borderRadius: 3,
+                textTransform: 'none',
+                boxShadow: 3,
+                bgcolor: 'primary.main',
+                color: 'white !important',
+                width: 'fit-content',
+                mt: 1,
+                '&:hover': {
+                  bgcolor: 'primary.dark',
+                  transform: 'translateY(-2px)',
+                  boxShadow: 6,
+                  color: 'white !important',
+                },
+                '&:visited': {
+                  color: 'white !important',
+                },
+                '&:link': {
+                  color: 'white !important',
+                },
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Agendar sessão
+            </Button>
           </Stack>
         </MaxWidth>
       </Stack>
