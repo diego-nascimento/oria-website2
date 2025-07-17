@@ -1,4 +1,4 @@
-import { Stack, Typography, Box, Container, CircularProgress } from '@mui/material';
+import { Stack, Typography, Box, CircularProgress } from '@mui/material';
 import { MaxWidth } from '@/shared/components/MaxWidth';
 import { Header } from '@/modules/Header';
 import { Footer } from '@/modules/Footer';
@@ -18,8 +18,14 @@ export default function GestaoDeManutencao() {
             justifyContent={'center'}
             alignItems={'center'}
             minHeight={'85vh'}
-            paddingX={2}
-            gap={4}
+            paddingX={{
+              xs: 2,
+              md: 2,
+            }}
+            gap={{
+              xs: 2,
+              md: 4,
+            }}
           >
           {/* Ícone de construção */}
           <Box
@@ -90,26 +96,32 @@ export default function GestaoDeManutencao() {
             lineHeight={1.5}
           >
             Estamos trabalhando para trazer uma experiência incrível para você.
-            Em breve, nossa página estará pronta com todo o conteúdo sobre psicologia para mães gestantes.
+            Em breve, nossa página estará pronta com todo o conteúdo para mulheres.
           </Typography>
 
           {/* Informações adicionais */}
-          <Container>
-            <Stack
-              direction={{
-                xs: 'column',
-                md: 'row',
-              }}
-              gap={3}
-              mt={4}
-              p={3}
-              borderRadius={2}
-              bgcolor="rgba(255, 255, 255, 0.1)"
-              sx={{
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-              }}
-            >
+          <Stack
+            direction={{
+              xs: 'column',
+              md: 'row',
+            }}
+            gap={{
+              xs: 2,
+              md: 3,
+            }}
+            mt={4}
+            p={{
+              xs: 2,
+              md: 3,
+            }}
+            borderRadius={2}
+            bgcolor="rgba(255, 255, 255, 0.1)"
+            sx={{
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              width: '100%',
+            }}
+          >
               <Box flex={1} textAlign="center">
                 <Typography
                   variant="h6"
@@ -164,7 +176,6 @@ export default function GestaoDeManutencao() {
                 </Typography>
               </Box>
             </Stack>
-          </Container>
 
           {/* Mensagem de contato */}
           <Typography
