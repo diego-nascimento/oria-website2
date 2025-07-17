@@ -14,6 +14,8 @@ interface ComingSoonProps {
 }
 
 export const ComingSoon = ({ timeLeft }: ComingSoonProps) => {
+  const { days, hours, minutes, seconds } = timeLeft;
+
   return (
     <Stack width={'100%'} minHeight={'100vh'} overflow={'auto'}>
       <WhatsappButton />
@@ -136,7 +138,7 @@ export const ComingSoon = ({ timeLeft }: ComingSoonProps) => {
                     fontWeight={700}
                     color="white"
                   >
-                    {timeLeft.days}
+                    {days}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -177,7 +179,7 @@ export const ComingSoon = ({ timeLeft }: ComingSoonProps) => {
                     fontWeight={700}
                     color="white"
                   >
-                    {timeLeft.hours.toString().padStart(2, '0')}
+                    {hours.toString().padStart(2, '0')}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -218,7 +220,7 @@ export const ComingSoon = ({ timeLeft }: ComingSoonProps) => {
                     fontWeight={700}
                     color="white"
                   >
-                    {timeLeft.minutes.toString().padStart(2, '0')}
+                    {minutes.toString().padStart(2, '0')}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -259,7 +261,7 @@ export const ComingSoon = ({ timeLeft }: ComingSoonProps) => {
                     fontWeight={700}
                     color="white"
                   >
-                    {timeLeft.seconds.toString().padStart(2, '0')}
+                    {seconds.toString().padStart(2, '0')}
                   </Typography>
                   <Typography
                     variant="body2"
