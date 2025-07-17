@@ -16,19 +16,21 @@ import { MulherAndando } from '@/modules/MulherAndando';
 
 export default function HomePage() {
   return (
-    <Stack width={'100%'} height={'100vh'} overflow={'auto'}>
-      <WhatsappButton />
-      <Header />
-      <Home />
-      <Apresentacao />
-      <Banner />
-      <Caminhos />
-      <Second />
-      <MulherAndando />
-      <PIlares />
-      <Avaliacoes />
-      <Questions />
-      <Footer />
-    </Stack>
+    <main>
+      <Stack width={'100%'} height={'100vh'} overflow={'auto'}>
+        <WhatsappButton />
+        <Header />
+        <Home />
+        <Apresentacao />
+        <Banner />
+        <Caminhos />
+        <Second />
+        <MulherAndando />
+        <PIlares />
+        <Avaliacoes />
+        <Questions />
+        <Footer />
+      </Stack>
+    </main>
   );
 }

@@ -11,6 +11,7 @@ export const AppBar = ({ children }: PropsWithChildren) => {
       color="secondary"
       position="sticky"
       elevation={isTrigged ? 8 : 0}
+      sx={{ zIndex: 1200 }}
     >
       {children}
     </MuiAppbar>

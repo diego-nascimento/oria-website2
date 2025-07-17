@@ -63,21 +63,23 @@ export const Header = () => {
           }}
           role="presentation"
         >
-          <List>
-            {items.map((item) => (
-              <ListItemContainer key={item.url} url={item.url}>
-                <ListItemButton>
-                  <ListItemText
-                    primaryTypographyProps={{
-                      fontWeight: 600,
-                      color: 'secondary.main',
-                    }}
-                    primary={item.text}
-                  />
-                </ListItemButton>
-              </ListItemContainer>
-            ))}
-          </List>
+          <nav aria-label="Menu mobile">
+            <List>
+              {items.map((item) => (
+                <ListItemContainer key={item.url} url={item.url}>
+                  <ListItemButton>
+                    <ListItemText
+                      primaryTypographyProps={{
+                        fontWeight: 600,
+                        color: 'secondary.main',
+                      }}
+                      primary={item.text}
+                    />
+                  </ListItemButton>
+                </ListItemContainer>
+              ))}
+            </List>
+          </nav>
           <Divider />
         </Box>
       </MobileDrawer>
@@ -95,13 +97,13 @@ export const Header = () => {
                 alignItems={'center'}
                 justifyContent={'space-between'}
               >
-                <Link href={'/#home'}>
+                <Link href={'/#home'} aria-label="Ir para página inicial">
                   <LogoWrapper>
                     <Image
                       src={'/logo.png'}
                       width={130}
                       height={30}
-                      alt="Ariane Miranda Logo"
+                      alt="Logo da Psicóloga Ariane Miranda - Psicologia Perinatal"
                     />
                   </LogoWrapper>
                 </Link>
@@ -115,7 +117,7 @@ export const Header = () => {
                   }}
                 >
                   <MenuButtonContainer>
-                    <IconButtonContainer>
+                    <IconButtonContainer aria-label="Abrir menu de navegação">
                       <MenuIcon
                         sx={{
                           color: 'secondary.contrastText',
@@ -125,7 +127,8 @@ export const Header = () => {
                   </MenuButtonContainer>
                 </Stack>
                 <Stack
-                  component={'nav'}
+                  component="nav"
+                  aria-label="Navegação principal"
                   sx={{
                     display: {
                       xs: 'none',
@@ -134,25 +137,35 @@ export const Header = () => {
                   }}
                   direction={'row'}
                 >
-                  {items.map((item) => {
-                    return (
-                      <DesktopMenuItemContainer key={item.url}>
-                        <Link href={item.url} key={item.url}>
-                          <Button
-                            variant="text"
-                            sx={{
-                              fontSize: 16,
-                              fontFamily: 'Bree Serif, serif',
-                              fontWeight: 400,
-                              color: 'primary.contrastText',
-                            }}
+                  <Stack
+                    component="ul"
+                    direction={'row'}
+                    sx={{ listStyle: 'none', margin: 0, padding: 0 }}
+                  >
+                    {items.map((item) => {
+                      return (
+                        <DesktopMenuItemContainer key={item.url}>
+                          <Link
+                            href={item.url}
+                            key={item.url}
+                            aria-label={`Ir para seção ${item.text}`}
                           >
-                            {item.text}
-                          </Button>
-                        </Link>
-                      </DesktopMenuItemContainer>
-                    );
-                  })}
+                            <Button
+                              variant="text"
+                              sx={{
+                                fontSize: 16,
+                                fontFamily: 'Bree Serif, serif',
+                                fontWeight: 400,
+                                color: 'primary.contrastText',
+                              }}
+                            >
+                              {item.text}
+                            </Button>
+                          </Link>
+                        </DesktopMenuItemContainer>
+                      );
+                    })}
+                  </Stack>
                 </Stack>
               </Stack>
             </MaxWidth>

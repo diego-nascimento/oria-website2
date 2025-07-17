@@ -12,6 +12,7 @@ export const MobileDrawer = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     if (matches) close();
   }, [close, matches]);
+
   return (
     <Drawer
       sx={{
@@ -19,6 +20,7 @@ export const MobileDrawer = ({ children }: PropsWithChildren) => {
           xs: 'block',
           md: 'none',
         },
+        zIndex: 1300,
       }}
       anchor={'left'}
       open={isOpen}
