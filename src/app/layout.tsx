@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://arianemiranda.com.br'),
+  metadataBase: new URL('https://arianemirandapsicologa.com'),
   alternates: {
     canonical: '/',
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: 'Psicóloga Ariane Miranda - Psicologia Perinatal e Parental',
     description:
       'Psicóloga especializada em psicologia perinatal e parental. Atendimento para gestantes, puérperas e famílias. Consultas online e presenciais em Ubá-MG.',
-    url: 'https://arianemiranda.com.br',
+    url: 'https://arianemirandapsicologa.com',
     siteName: 'Psicóloga Ariane Miranda',
     images: [
       {
@@ -103,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               name: 'Psicóloga Ariane Miranda',
               description:
                 'Psicóloga especializada em psicologia perinatal e parental',
-              url: 'https://arianemiranda.com.br',
+              url: 'https://arianemirandapsicologa.com',
               telephone: '+55-32-99999-9999',
               address: {
                 '@type': 'PostalAddress',
