@@ -1,6 +1,6 @@
 import { Stack, Typography, Box, CircularProgress } from '@mui/material';
 import { MaxWidth } from '@/shared/components/MaxWidth';
-import { Header } from '@/modules/Header';
+
 import { Footer } from '@/modules/Footer';
 import { WhatsappButton } from '@/modules/WhatsappButton';
 
