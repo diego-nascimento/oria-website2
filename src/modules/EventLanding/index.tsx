@@ -30,17 +30,27 @@ export const EventLanding = () => {
       <Stack
         alignItems={'center'}
         bgcolor={'secondary.main'}
-        minHeight={'60vh'}
+        minHeight={{
+          xs: '80vh',
+          md: '60vh',
+        }}
       >
         <MaxWidth>
           <Stack
             width={'100%'}
             justifyContent={'center'}
             alignItems={'center'}
-            minHeight={'60vh'}
+            minHeight={{
+              xs: '80vh',
+              md: '60vh',
+            }}
             paddingX={{
               xs: 2,
               md: 2,
+            }}
+            paddingY={{
+              xs: 4,
+              md: 0,
             }}
             gap={{
               xs: 3,
