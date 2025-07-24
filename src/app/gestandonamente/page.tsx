@@ -27,7 +27,7 @@ function GestaoDeManutencaoContent() {
 
 export default function GestaoDeManutencao() {
   return (
-    <Suspense fallback={<div>Carregando...</div>}>
+    <Suspense>
       <GestaoDeManutencaoContent />
     </Suspense>
   );
