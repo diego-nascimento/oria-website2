@@ -169,41 +169,46 @@ export const EventLanding = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 4 }}>
-                      <Stack gap={3}>
-                        <Box
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          width={60}
-                          height={60}
-                          borderRadius="50%"
-                          bgcolor="primary.main"
-                        >
-                          <BookIcon sx={{ fontSize: 30, color: 'white' }} />
-                        </Box>
-                        <Typography
-                          variant="h5"
-                          fontWeight={600}
-                          color="primary.main"
-                        >
-                          Mini Guia: O que eu carrego comigo
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          color="text.secondary"
-                          lineHeight={1.6}
-                        >
-                          Um material simples, reflexivo e bonito para você
-                          repetir a vivência que fizemos — sempre que precisar
-                          se escutar de novo.
-                        </Typography>
-                      </Stack>
-                    </CardContent>
+                    <Link
+                      href="/Lidando-com-a-ansiedade.pdf"
+                      download
+                      target="_blank"
+                    >
+                      <CardContent sx={{ p: 4 }}>
+                        <Stack gap={3}>
+                          <Box
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                            width={60}
+                            height={60}
+                            borderRadius="50%"
+                            bgcolor="primary.main"
+                          >
+                            <SpaIcon sx={{ fontSize: 30, color: 'white' }} />
+                          </Box>
+                          <Typography
+                            variant="h5"
+                            fontWeight={600}
+                            color="primary.main"
+                          >
+                            Lidando com a ansiedade na gestação
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            color="text.secondary"
+                            lineHeight={1.6}
+                          >
+                            Técnicas baseadas em Terapias
+                            Cognitivo-Comportamentais para identificar, entender
+                            e reduzir os gatilhos emocionais mais comuns na
+                            gestação.
+                          </Typography>
+                        </Stack>
+                      </CardContent>
+                    </Link>
                   </Card>
                 </Grid>
-
-                {/* Card de Avaliações Google - Mobile */}
                 <Grid
                   item
                   xs={12}
@@ -254,7 +259,7 @@ export const EventLanding = () => {
                         </Typography>
                         <Button
                           component={Link}
-                          href="https://www.google.com/search?q=ariane+miranda+psic%C3%B3loga+ub%C3%A1"
+                          href="https://g.page/r/CRHPXmXB8cPkEBM/review"
                           target="_blank"
                           variant="contained"
                           size="large"
@@ -292,6 +297,60 @@ export const EventLanding = () => {
                     </CardContent>
                   </Card>
                 </Grid>
+                <Grid item xs={12} md={6}>
+                  <Card
+                    sx={{
+                      height: '100%',
+                      borderRadius: 3,
+                      boxShadow: 3,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: 8,
+                      },
+                    }}
+                  >
+                    <Link
+                      href="/Guia-Prático-de-Plano-de-parto-Autoras-Ariane-e-Jennifer.pdf"
+                      target="_blank"
+                      download
+                    >
+                      <CardContent sx={{ p: 4 }}>
+                        <Stack gap={3}>
+                          <Box
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                            width={60}
+                            height={60}
+                            borderRadius="50%"
+                            bgcolor="primary.main"
+                          >
+                            <BookIcon sx={{ fontSize: 30, color: 'white' }} />
+                          </Box>
+                          <Typography
+                            variant="h5"
+                            fontWeight={600}
+                            color="primary.main"
+                          >
+                            Guia de Plano de Parto Consciente
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            color="text.secondary"
+                            lineHeight={1.6}
+                          >
+                            Um guia prático e editável, com orientações claras
+                            para você refletir, registrar suas escolhas e se
+                            preparar emocional e fisicamente para o nascimento.
+                          </Typography>
+                        </Stack>
+                      </CardContent>
+                    </Link>
+                  </Card>
+                </Grid>
+
+                {/* Card de Avaliações Google - Mobile */}
 
                 <Grid item xs={12} md={6}>
                   <Card
@@ -306,39 +365,46 @@ export const EventLanding = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 4 }}>
-                      <Stack gap={3}>
-                        <Box
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          width={60}
-                          height={60}
-                          borderRadius="50%"
-                          bgcolor="primary.main"
-                        >
-                          <AssignmentIcon
-                            sx={{ fontSize: 30, color: 'white' }}
-                          />
-                        </Box>
-                        <Typography
-                          variant="h5"
-                          fontWeight={600}
-                          color="primary.main"
-                        >
-                          Guia de Plano de Parto Consciente
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          color="text.secondary"
-                          lineHeight={1.6}
-                        >
-                          Um modelo editável + orientações com linguagem clara
-                          para você se preparar emocional e praticamente para o
-                          nascimento.
-                        </Typography>
-                      </Stack>
-                    </CardContent>
+                    <Link
+                      href="/Autoestima-para-vida.pdf"
+                      target="_blank"
+                      download
+                    >
+                      <CardContent sx={{ p: 4 }}>
+                        <Stack gap={3}>
+                          <Box
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                            width={60}
+                            height={60}
+                            borderRadius="50%"
+                            bgcolor="primary.main"
+                          >
+                            <AssignmentIcon
+                              sx={{ fontSize: 30, color: 'white' }}
+                            />
+                          </Box>
+                          <Typography
+                            variant="h5"
+                            fontWeight={600}
+                            color="primary.main"
+                          >
+                            Autoestima para Vida
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            color="text.secondary"
+                            lineHeight={1.6}
+                          >
+                            Um material reflexivo e prático para compreender sua
+                            autoestima, identificar padrões e fortalecer a
+                            relação consigo mesma. Use na gestação, no puerpério
+                            ou quando sentir que precisa se fortalecer.
+                          </Typography>
+                        </Stack>
+                      </CardContent>
+                    </Link>
                   </Card>
                 </Grid>
 
@@ -355,87 +421,44 @@ export const EventLanding = () => {
                       },
                     }}
                   >
-                    <CardContent sx={{ p: 4 }}>
-                      <Stack gap={3}>
-                        <Box
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          width={60}
-                          height={60}
-                          borderRadius="50%"
-                          bgcolor="primary.main"
-                        >
-                          <SpaIcon sx={{ fontSize: 30, color: 'white' }} />
-                        </Box>
-                        <Typography
-                          variant="h5"
-                          fontWeight={600}
-                          color="primary.main"
-                        >
-                          Material Psicoeducativo: Manejo da Ansiedade
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          color="text.secondary"
-                          lineHeight={1.6}
-                        >
-                          Técnicas baseadas em Terapias
-                          Cognitivo-Comportamentais para identificar, entender e
-                          reduzir os gatilhos emocionais mais comuns na
-                          gestação.
-                        </Typography>
-                      </Stack>
-                    </CardContent>
-                  </Card>
-                </Grid>
-
-                <Grid item xs={12} md={6}>
-                  <Card
-                    sx={{
-                      height: '100%',
-                      borderRadius: 3,
-                      boxShadow: 3,
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        transform: 'translateY(-8px)',
-                        boxShadow: 8,
-                      },
-                    }}
-                  >
-                    <CardContent sx={{ p: 4 }}>
-                      <Stack gap={3}>
-                        <Box
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          width={60}
-                          height={60}
-                          borderRadius="50%"
-                          bgcolor="primary.main"
-                        >
-                          <HeadphonesIcon
-                            sx={{ fontSize: 30, color: 'white' }}
-                          />
-                        </Box>
-                        <Typography
-                          variant="h5"
-                          fontWeight={600}
-                          color="primary.main"
-                        >
-                          Áudio de respiração guiada (5 min)
-                        </Typography>
-                        <Typography
-                          variant="body1"
-                          color="text.secondary"
-                          lineHeight={1.6}
-                        >
-                          Use quando sentir que o mundo tá demais. É só apertar
-                          o play e se permitir parar por alguns minutos. Sua
-                          mente também precisa respirar.
-                        </Typography>
-                      </Stack>
-                    </CardContent>
+                    <Link
+                      href="https://open.spotify.com/episode/44oIiwJzknvQjKEb9EOM1z?si=iG4gHsN6RrWgm11Qhr52NA"
+                      target="_blank"
+                    >
+                      <CardContent sx={{ p: 4 }}>
+                        <Stack gap={3}>
+                          <Box
+                            display="flex"
+                            justifyContent="center"
+                            alignItems="center"
+                            width={60}
+                            height={60}
+                            borderRadius="50%"
+                            bgcolor="primary.main"
+                          >
+                            <HeadphonesIcon
+                              sx={{ fontSize: 30, color: 'white' }}
+                            />
+                          </Box>
+                          <Typography
+                            variant="h5"
+                            fontWeight={600}
+                            color="primary.main"
+                          >
+                            Áudio de respiração guiada (5 min)
+                          </Typography>
+                          <Typography
+                            variant="body1"
+                            color="text.secondary"
+                            lineHeight={1.6}
+                          >
+                            Use quando sentir que o mundo tá demais. É só
+                            apertar o play e se permitir parar por alguns
+                            minutos. Sua mente também precisa respirar.
+                          </Typography>
+                        </Stack>
+                      </CardContent>
+                    </Link>
                   </Card>
                 </Grid>
               </Grid>
@@ -508,7 +531,7 @@ export const EventLanding = () => {
 
                     <Button
                       component={Link}
-                      href="https://www.google.com/search?q=ariane+miranda+psic%C3%B3loga+ub%C3%A1"
+                      href="https://g.page/r/CRHPXmXB8cPkEBM/review"
                       target="_blank"
                       variant="contained"
                       size="large"
